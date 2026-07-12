@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zainul Sedek, Content & Brand Strategist</title>
+<meta name="description" content="Zainul Sedek, Content and brand strategist based in Kuala Lumpur. I grew an account from 9,000 to 500,000 in seven months, drove 20M+ views, and secured RM1.3M+ in client projects. AI-native content, strategy, and brand systems.">
+<meta property="og:title" content="Zainul Sedek, Content & Brand Strategist">
+<meta property="og:description" content="AI-native content, strategy, and brand systems for brands that refuse to be scrolled past.">
+<meta property="og:type" content="website">
+
+<!-- ============================================================
+     HOW TO ADD YOUR IMAGES & VIDEOS LATER
+     ------------------------------------------------------------
+     1. Put your files in a folder named  /images  next to this file.
+     2. Use these exact filenames (jpg / png / mp4 all fine):
+
+        HERO ............ images/hero.jpg   (or hero.mp4, see note below)
+        PROFILE ......... images/profile.jpg
+
+        CLIENT WORK
+        images/amina-rose.jpg   (Amina uses 3: amina-rose.jpg, amina-rose-2.jpg, amina-rose-3.jpg)
+        images/chek-hup.jpg
+        images/binggrae.jpg   (Binggrae feature uses: binggrae.jpg, -2, -3, -4, binggrae-gif.mp4, binggrae-reels.mp4, binggrae-recap.mp4, binggrae-interview.mp4 + posters)
+        images/china-airlines.jpg
+        images/genki-salmon.jpg
+        images/hot-and-roll.jpg
+        images/mfm-cap-ros.jpg
+        images/sjkp.jpg
+        images/taiwan-excellence.jpg
+        images/taj-mahal.jpg
+        images/teh-cap-panglima.jpg
+        images/dragonfruit.jpg
+        images/tapak-group.jpg
+
+        SYSTEMS & TOOLS
+        images/web-hub.jpg
+        images/contentops.jpg
+        images/kanban.jpg
+        images/skills.jpg
+        images/gemini-omni.jpg
+
+        PERSONAL
+        images/tearai.jpg
+        images/atelier.jpg
+        images/ioo-ebook.jpg
+        images/broll.jpg
+        images/prompt-packs.jpg
+
+     3. That's it. Any slot with a matching file shows the image;
+        anything missing keeps its designed colour panel.
+
+     TO USE A VIDEO FOR THE HERO instead of an image:
+        - name it images/hero.mp4
+        - in the HERO section below, swap the <img> for the <video>
+          block that is commented right beside it.
+     ============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   DESIGN TOKENS
+   ============================================================ */
+:root{
+  /* palette, warm, vibrant, expressive. deliberately NOT AI-indigo */
+  --bone:      #F5EEE1;
+  --bone-2:    #EFE5D3;
+  --ink:       #191411;
+  --ink-2:     #241C17;
+  --ink-soft:  #4C433A;
+  --ink-mute:  #8B8073;
+  --coral:     #FF5630;   /* primary accent */
+  --coral-deep:#E8401B;
+  --lime:      #D4F250;   /* secondary pop, used sparingly */
+  --clay:      #C9744A;   /* warm mid-tone */
+  --clay-soft: #E6D3BF;
+  --line:      rgba(25,20,17,.14);
+  --line-2:    rgba(25,20,17,.08);
+
+  /* fluid type scale */
+  --fs-display: clamp(3rem, 9vw, 8.2rem);
+  --fs-h1:      clamp(2.6rem, 7vw, 6rem);
+  --fs-h2:      clamp(2rem, 4.6vw, 3.9rem);
+  --fs-h3:      clamp(1.35rem, 2.4vw, 2rem);
+  --fs-lead:    clamp(1.15rem, 1.8vw, 1.6rem);
+  --fs-body:    clamp(1rem, 1.15vw, 1.1rem);
+  --fs-sm:      .82rem;
+
+  /* spacing scale */
+  --s-1: .5rem; --s-2: 1rem; --s-3: 1.5rem; --s-4: 2rem;
+  --s-5: 3rem;  --s-6: 4rem; --s-7: 6rem;  --s-8: 9rem; --s-9: 13rem;
+
+  --maxw: 1320px;
+  --pad: clamp(1.25rem, 5vw, 5rem);
+  --radius: 18px;
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:"Space Grotesk",system-ui,sans-serif;
+  background:var(--bone);
+  color:var(--ink);
+  font-size:var(--fs-body);
+  line-height:1.55;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--coral);color:var(--bone)}
+
+h1,h2,h3,h4{
+  font-family:"Fraunces",Georgia,serif;
+  font-weight:500;
+  line-height:.98;
+  letter-spacing:-.02em;
+}
+.serif-italic{font-style:italic;font-variation-settings:"SOFT" 40,"WONK" 1}
+
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad)}
+.eyebrow{
+  font-size:var(--fs-sm);
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  font-weight:600;
+  color:var(--ink-soft);
+  display:inline-flex;align-items:center;gap:.6rem;
+}
+.eyebrow::before{
+  content:"";width:26px;height:1px;background:var(--coral);display:inline-block;
+}
+.section-index{
+  font-family:"Space Grotesk";
+  font-size:var(--fs-sm);
+  letter-spacing:.1em;
+  color:var(--coral-deep);
+  font-weight:600;
+}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.15rem var(--pad);
+  mix-blend-mode:difference;color:#fff;
+  transition:transform .5s cubic-bezier(.16,1,.3,1);
+}
+.nav.hide{transform:translateY(-120%)}
+.nav__logo{font-family:"Fraunces";font-weight:600;font-size:1.3rem;letter-spacing:-.02em}
+.nav__logo b{color:var(--coral)}
+.nav__links{display:flex;gap:1.8rem;align-items:center}
+.nav__links a{font-size:.9rem;font-weight:500;position:relative}
+.nav__links a::after{
+  content:"";position:absolute;left:0;bottom:-4px;width:0;height:1.5px;background:currentColor;
+  transition:width .3s ease;
+}
+.nav__links a:hover::after{width:100%}
+.nav__cta{
+  border:1.5px solid currentColor;border-radius:100px;padding:.5rem 1.1rem;font-size:.85rem;font-weight:600;
+  transition:background .3s,color .3s;
+}
+@media(max-width:760px){.nav__links a:not(.nav__cta){display:none}}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{
+  min-height:100svh;position:relative;display:flex;flex-direction:column;justify-content:flex-end;
+  padding-bottom:var(--s-5);overflow:hidden;
+}
+.hero__bg{
+  position:absolute;inset:0;z-index:0;overflow:hidden;
+}
+.hero__bg::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(25,20,17,.10) 0%,rgba(25,20,17,.02) 40%,var(--bone) 100%);
+}
+.hero__blob{
+  position:absolute;border-radius:50%;filter:blur(60px);opacity:.55;will-change:transform;
+}
+.hero__blob.b1{width:52vw;height:52vw;background:radial-gradient(circle,var(--coral),transparent 70%);top:-12%;right:-8%}
+.hero__blob.b2{width:40vw;height:40vw;background:radial-gradient(circle,var(--lime),transparent 70%);bottom:-6%;left:-6%;opacity:.4}
+.hero__blob.b3{width:34vw;height:34vw;background:radial-gradient(circle,var(--clay),transparent 70%);top:30%;left:38%;opacity:.35}
+
+.hero__inner{position:relative;z-index:2;width:100%}
+.hero__top{
+  display:flex;justify-content:space-between;align-items:flex-start;gap:var(--s-4);
+  margin-bottom:var(--s-6);flex-wrap:wrap;
+}
+.hero__intro{max-width:32ch}
+.hero__intro p{font-size:var(--fs-lead);color:var(--ink-soft);line-height:1.35}
+.hero__intro .name{color:var(--ink);font-weight:600}
+.hero__meta{text-align:right;font-size:var(--fs-sm);color:var(--ink-soft);line-height:1.9;letter-spacing:.02em}
+.hero__meta b{color:var(--ink);display:block;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.3rem}
+
+.hero__display{
+  font-size:var(--fs-display);font-weight:400;line-height:.9;letter-spacing:-.035em;
+  max-width:16ch;
+}
+.hero__display .line{display:block}
+.hero__display .line > span{display:inline-block;white-space:nowrap}
+.hero__display em{color:var(--coral);font-variation-settings:"SOFT" 30,"WONK" 1}
+.hero__display .stroke{
+  -webkit-text-stroke:1.6px var(--ink);color:transparent;
+}
+
+.hero__scroll{
+  display:flex;align-items:center;gap:.7rem;margin-top:var(--s-5);font-size:var(--fs-sm);
+  letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);
+}
+.hero__scroll .dot{
+  width:34px;height:34px;border:1.5px solid var(--ink);border-radius:50%;
+  display:grid;place-items:center;animation:bob 1.8s ease-in-out infinite;
+}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+
+/* ============================================================
+   MARQUEE
+   ============================================================ */
+.marquee{
+  border-block:1.5px solid var(--ink);padding-block:1.15rem;overflow:hidden;white-space:nowrap;
+  background:var(--ink);color:var(--bone);
+}
+.marquee__track{display:inline-flex;gap:2.5rem;will-change:transform}
+.marquee__track span{
+  font-family:"Fraunces";font-size:clamp(1.4rem,3vw,2.4rem);font-weight:400;letter-spacing:-.01em;
+  display:inline-flex;align-items:center;gap:2.5rem;
+}
+.marquee__track span::after{content:"✦";color:var(--coral);font-size:.7em}
+
+/* ============================================================
+   GENERIC SECTION
+   ============================================================ */
+.section{padding-block:var(--s-8)}
+.section__head{
+  display:flex;justify-content:space-between;align-items:flex-end;gap:var(--s-4);
+  margin-bottom:var(--s-6);flex-wrap:wrap;
+}
+.section__head h2{font-size:var(--fs-h2);max-width:18ch}
+.section__head .side{max-width:34ch;color:var(--ink-soft);font-size:var(--fs-body)}
+
+/* ============================================================
+   MANIFESTO
+   ============================================================ */
+.manifesto{padding-block:var(--s-8)}
+.manifesto p{
+  font-family:"Fraunces";font-weight:300;font-size:var(--fs-h1);line-height:1.06;letter-spacing:-.025em;
+  max-width:20ch;
+}
+.manifesto em{color:var(--coral);font-style:italic;font-variation-settings:"SOFT" 40,"WONK" 1}
+.manifesto .reveal-word{display:inline-block}
+
+/* ============================================================
+   WORK GRID
+   ============================================================ */
+.work{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--s-4) var(--s-4)}
+.card{
+  position:relative;display:flex;flex-direction:column;
+  grid-column:span 6;
+}
+.card.wide{grid-column:span 7}
+.card.narrow{grid-column:span 5}
+.card.full{grid-column:span 12}
+@media(max-width:860px){
+  .card,.card.wide,.card.narrow{grid-column:span 12}
+}
+
+.card__media{
+  position:relative;width:100%;aspect-ratio:16/11;border-radius:var(--radius);overflow:hidden;
+  background:var(--clay-soft);isolation:isolate;
+}
+.card.tall .card__media{aspect-ratio:4/5}
+.card__media img,.card__media video{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  opacity:0;transition:opacity .6s ease;will-change:transform;
+}
+.card__media img.is-loaded,.card__media video.is-loaded{opacity:1}
+
+/* designed placeholder, looks intentional, never "broken" */
+.card__ph{
+  position:absolute;inset:0;z-index:1;display:flex;flex-direction:column;justify-content:space-between;
+  padding:1.4rem;color:var(--ink);
+}
+.card__media img.is-loaded ~ .card__ph,
+.card__media video.is-loaded ~ .card__ph{opacity:0;pointer-events:none;transition:opacity .5s}
+.ph--coral{background:linear-gradient(135deg,#FFD9CE,#FFB59E 55%,var(--coral))}
+.ph--dark{background:linear-gradient(135deg,#2A211B,#191411)}
+.ph--dark, .ph--dark .card__ph-tag{color:var(--bone)}
+.ph--lime{background:linear-gradient(135deg,#EFF6C9,#DCEE8A 55%,var(--lime))}
+.ph--clay{background:linear-gradient(135deg,#EADAC6,#D9B896 55%,var(--clay))}
+.card__ph-tag{
+  font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;opacity:.8;
+  display:flex;justify-content:space-between;
+}
+.card__ph-name{font-family:"Fraunces";font-size:clamp(1.6rem,3vw,2.4rem);font-weight:500;line-height:.98;letter-spacing:-.02em}
+
+.card__body{padding:1.25rem .25rem 0}
+.card__row{display:flex;justify-content:space-between;align-items:baseline;gap:1rem}
+.card__title{font-size:var(--fs-h3);font-weight:500}
+.card__client{font-size:var(--fs-sm);color:var(--coral-deep);font-weight:600;letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+.card__desc{color:var(--ink-soft);margin-top:.6rem;max-width:46ch}
+.card__tags{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:1rem}
+.tag{
+  font-size:.74rem;border:1px solid var(--line);border-radius:100px;padding:.28rem .75rem;
+  color:var(--ink-soft);letter-spacing:.02em;
+}
+.card:hover .card__media img.is-loaded,
+.card:hover .card__media video.is-loaded{transform:scale(1.04)}
+.card__media{transition:transform .5s cubic-bezier(.16,1,.3,1)}
+.card:hover .card__media{transform:translateY(-4px)}
+
+/* campaign gallery variant (multiple real post images) */
+.card__media--gallery{
+  aspect-ratio:auto;background:transparent;overflow:visible;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:.55rem;border-radius:0;
+}
+.card__media--gallery img{position:static;width:100%;height:auto;aspect-ratio:4/5;border-radius:12px}
+.card:hover .card__media--gallery{transform:translateY(-4px)}
+.card:hover .card__media--gallery img.is-loaded{transform:none}
+
+/* full-width client feature (rich galleries + video) */
+.feature__head{max-width:64ch;margin-bottom:1.6rem}
+.feature__gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(175px,1fr));gap:.7rem;margin-bottom:.9rem}
+.feature__gallery img,.feature__gallery video{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:12px;display:block;background:var(--clay-soft)}
+.feature__reels{display:flex;flex-wrap:wrap;gap:.9rem}
+.feature__reels video{width:220px;max-width:calc(50% - .5rem);aspect-ratio:9/16;object-fit:cover;border-radius:14px;background:var(--ink);display:block;cursor:pointer}
+@media(max-width:520px){.feature__reels video{width:calc(50% - .5rem)}}
+.feature--link{text-decoration:none;transition:transform .5s cubic-bezier(.16,1,.3,1)}
+.feature--link:hover{transform:translateY(-4px)}
+.feature__cta{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.3rem;font-weight:600;color:var(--coral-deep);letter-spacing:.01em;transition:gap .3s}
+.feature--link:hover .feature__cta{gap:1rem}
+.feature--link:hover .feature__gallery img{filter:saturate(1.05)}
+
+/* uniform linked work grid (client case studies) */
+.wgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+@media(max-width:900px){.wgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.wgrid{grid-template-columns:1fr}}
+.wcard{display:flex;flex-direction:column;text-decoration:none;transition:transform .5s cubic-bezier(.16,1,.3,1)}
+.wcard:hover{transform:translateY(-5px)}
+.wcard__media{position:relative;aspect-ratio:4/5;border-radius:var(--radius);overflow:hidden;background:var(--clay-soft);isolation:isolate}
+.wcard__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.16,1,.3,1)}
+.wcard:hover .wcard__media img{transform:scale(1.05)}
+.wcard__ph{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:space-between;padding:1.3rem;color:var(--ink)}
+.ph--dark .wcard__ph{color:var(--bone)}
+.wcard__ph-tag{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;opacity:.85;display:flex;justify-content:space-between}
+.wcard__ph-name{font-family:"Fraunces";font-size:clamp(1.5rem,2.4vw,2.1rem);font-weight:500;line-height:.98;letter-spacing:-.02em}
+.wcard__body{padding:1rem .15rem 0;display:flex;flex-direction:column;flex:1}
+.wcard__row{display:flex;justify-content:space-between;align-items:baseline;gap:.8rem}
+.wcard__title{font-family:"Fraunces";font-size:var(--fs-h3);font-weight:500;line-height:1;letter-spacing:-.02em}
+.wcard__client{font-size:.72rem;color:var(--coral-deep);font-weight:600;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.wcard__desc{color:var(--ink-soft);font-size:.95rem;margin-top:.55rem;flex:1}
+.wcard__cta{display:inline-flex;align-items:center;gap:.4rem;margin-top:.9rem;font-size:.85rem;font-weight:600;color:var(--coral-deep);transition:gap .3s}
+.wcard:hover .wcard__cta{gap:.8rem}
+
+/* dark band for the SYSTEMS section */
+.band-dark{background:var(--ink);color:var(--bone)}
+.band-dark .section__head .side,.band-dark .card__desc{color:rgba(245,238,225,.66)}
+.band-dark .card__title{color:var(--bone)}
+.band-dark .tag{border-color:rgba(245,238,225,.2);color:rgba(245,238,225,.7)}
+.band-dark .eyebrow{color:rgba(245,238,225,.7)}
+.band-dark .section-index{color:var(--lime)}
+.band-dark .card__client{color:var(--lime)}
+
+/* ============================================================
+   ABOUT
+   ============================================================ */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:var(--s-6);align-items:center}
+@media(max-width:900px){.about{grid-template-columns:1fr;gap:var(--s-5)}}
+.about__media{
+  position:relative;aspect-ratio:4/5;border-radius:var(--radius);overflow:hidden;background:var(--clay-soft);
+}
+.about__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s}
+.about__media img.is-loaded{opacity:1}
+.about__media .card__ph{background:linear-gradient(150deg,#FFD9CE,#FFB59E 50%,var(--coral))}
+.about h2{font-size:var(--fs-h1);margin-bottom:var(--s-4)}
+.about p{font-size:var(--fs-lead);color:var(--ink-soft);margin-bottom:var(--s-3);line-height:1.45}
+.about p b{color:var(--ink);font-weight:600}
+.about em{color:var(--coral-deep);font-style:normal;font-weight:600}
+
+/* ============================================================
+   PROOF / STATS
+   ============================================================ */
+.proof{background:var(--coral);color:var(--bone)}
+.proof__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s-5) var(--s-4)}
+@media(max-width:820px){.proof__grid{grid-template-columns:repeat(2,1fr)}}
+.stat__num{font-family:"Fraunces";font-size:clamp(3rem,7vw,6rem);font-weight:500;line-height:.9;letter-spacing:-.03em}
+.stat__num small{font-size:.5em;vertical-align:super}
+.stat__label{margin-top:.8rem;font-size:var(--fs-sm);letter-spacing:.02em;line-height:1.4;opacity:.9;max-width:22ch}
+
+/* ============================================================
+   SERVICES
+   ============================================================ */
+.services{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+}
+@media(max-width:820px){.services{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.services{grid-template-columns:1fr}}
+.service{
+  background:var(--bone);padding:2rem 1.75rem;display:flex;flex-direction:column;
+  min-height:190px;transition:background .35s;
+}
+.service:hover{background:var(--bone-2)}
+.service__no{font-size:.78rem;letter-spacing:.12em;color:var(--coral-deep);font-weight:600}
+.service__name{font-family:"Fraunces";font-size:clamp(1.35rem,2.3vw,1.9rem);font-weight:500;line-height:1;margin-top:.4rem}
+.service__desc{color:var(--ink-soft);font-size:.98rem;margin-top:auto;padding-top:1rem}
+.services__cta{display:flex;gap:1rem;flex-wrap:wrap;margin-top:var(--s-5);align-items:center}
+.services__cta .note{font-size:var(--fs-sm);color:var(--ink-mute)}
+
+/* ============================================================
+   CONTACT
+   ============================================================ */
+.contact{padding-block:var(--s-9) var(--s-7);text-align:center}
+.contact__pre{margin-bottom:var(--s-4)}
+.contact h2{font-size:var(--fs-display);line-height:.92;letter-spacing:-.03em;margin-bottom:var(--s-5)}
+.contact h2 em{color:var(--coral);font-variation-settings:"SOFT" 40,"WONK" 1}
+.contact__mail{
+  display:inline-flex;align-items:center;gap:.8rem;font-family:"Fraunces";
+  font-size:clamp(1.4rem,3.4vw,2.6rem);border-bottom:2px solid var(--ink);padding-bottom:.3rem;
+  transition:color .3s,border-color .3s;
+}
+.contact__mail:hover{color:var(--coral);border-color:var(--coral)}
+.contact__links{display:flex;gap:1.4rem;justify-content:center;flex-wrap:wrap;margin-top:var(--s-5)}
+.btn{
+  display:inline-flex;align-items:center;gap:.6rem;border:1.5px solid var(--ink);border-radius:100px;
+  padding:.85rem 1.6rem;font-weight:600;font-size:.95rem;transition:all .3s cubic-bezier(.16,1,.3,1);
+}
+.btn:hover{background:var(--ink);color:var(--bone);transform:translateY(-3px)}
+.btn--fill{background:var(--coral);border-color:var(--coral);color:var(--bone)}
+.btn--fill:hover{background:var(--coral-deep);border-color:var(--coral-deep);color:var(--bone)}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer{border-top:1.5px solid var(--line);padding-block:var(--s-4)}
+.footer__row{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;font-size:var(--fs-sm);color:var(--ink-soft)}
+.footer__row b{font-family:"Fraunces";color:var(--ink);font-size:1.1rem}
+
+/* ============================================================
+   REVEAL ANIM (base states; JS adds .in)
+   ============================================================ */
+.r{opacity:0;transform:translateY(34px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.r.in{opacity:1;transform:none}
+.r-2{transition-delay:.08s}.r-3{transition-delay:.16s}.r-4{transition-delay:.24s}
+
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition-duration:.01ms!important}
+  .r{opacity:1;transform:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<nav class="nav" id="nav">
+  <a href="#top" class="nav__logo">Zainul<b>.</b></a>
+  <div class="nav__links">
+    <a href="#work">Work</a>
+    <a href="#systems">Systems</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact" class="nav__cta">Let's talk</a>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="top">
+  <div class="hero__bg">
+    <div class="hero__blob b1" data-speed="0.12"></div>
+    <div class="hero__blob b2" data-speed="-0.08"></div>
+    <div class="hero__blob b3" data-speed="0.06"></div>
+    <!-- OPTIONAL: drop images/hero.jpg (or swap for the video block) as a full-bleed hero visual.
+         <img src="images/hero.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.28;mix-blend-mode:multiply"
+              onload="this.style.opacity='.28'" onerror="this.remove()">
+         VIDEO version:
+         <video src="images/hero.mp4" autoplay muted loop playsinline
+                style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.3;mix-blend-mode:multiply"></video> -->
+  </div>
+
+  <div class="hero__inner wrap">
+    <div class="hero__top">
+      <div class="hero__intro r">
+        <p><span class="name">Zainul Sedek.</span> Content &amp; brand strategist building work that people actually stop for.</p>
+      </div>
+      <div class="hero__meta r r-2">
+        <b>Based in</b>
+        Kuala Lumpur, MY<br>
+        Senior Content Strategist
+      </div>
+    </div>
+
+    <h1 class="hero__display">
+      <span class="line"><span>Ideas that</span></span>
+      <span class="line"><span>refuse to be</span></span>
+      <span class="line"><span><em>scrolled</em> <span class="stroke">past.</span></span></span>
+    </h1>
+
+    <div class="hero__scroll r r-3">
+      <span class="dot">
+        <svg width="12" height="14" viewBox="0 0 12 14" fill="none"><path d="M6 1v12M1 8l5 5 5-5" stroke="currentColor" stroke-width="1.4"/></svg>
+      </span>
+      Scroll to see the work
+    </div>
+  </div>
+</header>
+
+<!-- ================= MARQUEE ================= -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track" id="marquee">
+    <span>Content Strategy</span><span>Brand Systems</span><span>AI Video</span><span>Social Campaigns</span><span>Copywriting</span><span>Creative Direction</span>
+    <span>Content Strategy</span><span>Brand Systems</span><span>AI Video</span><span>Social Campaigns</span><span>Copywriting</span><span>Creative Direction</span>
+  </div>
+</div>
+
+<!-- ================= MANIFESTO ================= -->
+<section class="manifesto wrap">
+  <p class="r">I don't make content that fills a calendar. I make the kind that <em>earns attention</em>, then turns it into growth, culture, and sales.</p>
+</section>
+
+<!-- ================= WORK / CLIENT ================= -->
+<section class="section" id="work">
+  <div class="wrap">
+    <div class="section__head">
+      <div>
+        <h2 class="r">Brands I've helped become impossible to ignore.</h2>
+      </div>
+      <p class="side r r-3">Branding and content for brands across food, beverage, aviation, and the public sector, each one chasing the same thing: sharper awareness and deeper engagement.</p>
+    </div>
+
+        <div class="wgrid">
+      <a href="amina-rose.html" class="wcard r">
+        <div class="wcard__media"><img src="images/amina-rose.jpg" alt="Amina Rose" loading="lazy"></div>
+        <div class="wcard__body">
+          <div class="wcard__row"><h3 class="wcard__title">Corn Cordial</h3><span class="wcard__client">Amina Rose</span></div>
+          <p class="wcard__desc">Premium corn cordial, both a drink and a cooking base.</p>
+          <span class="wcard__cta">View case study &#8594;</span>
+        </div>
+      </a>
+      <a href="chek-hup.html" class="wcard r">
+        <div class="wcard__media"><img src="images/chek-hup.jpg" alt="Chek Hup" loading="lazy"></div>
+        <div class="wcard__body">
+          <div class="wcard__row"><h3 class="wcard__title">A New Chapter for CH</h3><span class="wcard__client">Chek Hup</span></div>
+          <p class="wcard__desc">Ipoh heritage brand entering the Malay market.</p>
+          <span class="wcard__cta">View case study &#8594;</span>
+        </div>
+      </a>
+      <a href="binggrae.html" class="wcard r">
+        <div class="wcard__media"><img src="images/binggrae.jpg" alt="Binggrae" loading="lazy"></div>
+        <div class="wcard__body">
+          <div class="wcard__row"><h3 class="wcard__title">Taste the Joy</h3><span class="wcard__client">Binggrae</span></div>
+          <p class="wcard__desc">Ongoing K brand social, from concerts to picnics.</p>
+          <span class="wcard__cta">View case study &#8594;</span>
+        </div>
+      </a>
+      <a href="china-airlines.html" class="wcard r">
+        <div class="wcard__media"><img src="images/china-airlines.jpg" alt="China Airlines" loading="lazy"></div>
+        <div class="wcard__body">
+          <div class="wcard__row"><h3 class="wcard__title">Destination Series</h3><span class="wcard__client">China Airlines</span></div>
+          <p class="wcard__desc">A ten route series with strict visual DNA.</p>
+          <span class="wcard__cta">View case study &#8594;</span>
+        </div>
+      </a>
+      <a href="genki-sushi.html" class="wcard r">
+        <div class="wcard__media"><img src="images/genki.jpg" alt="Genki Sushi" loading="lazy"></div>
+        <div class="wcard__body">
+          <div class="wcard__row"><h3 class="wcard__title">Kasi Senyum</h3><span class="wcard__client">Genki Sushi</span></div>
+          <p class="wcard__desc">The Genki Kasi Senyum September campaign.</p>
+          <span class="wcard__cta">View case study &#8594;</span>
+        </div>
+      </a>
+      <a href="hot-and-roll.html" class="wcard r">
+        <div class="wcard__media ph--clay"><div class="wcard__ph"><div class="wcard__ph-tag"><span>Short Form</span><span>&#8599;</span></div><div class="wcard__ph-name">Hot &amp; Roll</div></div></div>
+        <div class="wcard__body">
+          <div class="wcard__row"><h3 class="wcard__title">POV Food Video</h3><span class="wcard__client">Hot &amp; Roll</span></div>
+          <p class="wcard__desc">Nostalgic short form video for a wrap chain.</p>
+          <span class="wcard__cta">View case study &#8594;</span>
+        </div>
+      </a>
+      <a href="mfm-cap-ros.html" class="wcard r">
+        <div class="wcard__media ph--lime"><div class="wcard__ph"><div class="wcard__ph-tag"><span>Recipe Led</span><span>&#8599;</span></div><div class="wcard__ph-name">MFM Cap Ros</div></div></div>
+        <div class="wcard__body">
+          <div class="wcard__row"><h3 class="wcard__title">Cap Ros Online</h3><span class="wcard__client">MFM Cap Ros</span></div>
+          <p class="wcard__desc">A baking staple of fifty years, brought online.</p>
+          <span class="wcard__cta">View case study &#8594;</span>
+        </div>
+      </a>
+      <a href="sjkp.html" class="wcard r">
+        <div class="wcard__media ph--dark"><div class="wcard__ph"><div class="wcard__ph-tag"><span>Public Sector</span><span>&#8599;</span></div><div class="wcard__ph-name">SJKP</div></div></div>
+        <div class="wcard__body">
+          <div class="wcard__row"><h3 class="wcard__title">Education First</h3><span class="wcard__client">SJKP</span></div>
+          <p class="wcard__desc">Home financing, made human for the public.</p>
+          <span class="wcard__cta">View case study &#8594;</span>
+        </div>
+      </a>
+      <a href="taiwan-excellence.html" class="wcard r">
+        <div class="wcard__media ph--dark"><div class="wcard__ph"><div class="wcard__ph-tag"><span>Flagship</span><span>&#8599;</span></div><div class="wcard__ph-name">Taiwan Excellence</div></div></div>
+        <div class="wcard__body">
+          <div class="wcard__row"><h3 class="wcard__title">Taiwan Excellence</h3><span class="wcard__client">Taiwan Excellence</span></div>
+          <p class="wcard__desc">The flagship Taiwan innovation account.</p>
+          <span class="wcard__cta">View case study &#8594;</span>
+        </div>
+      </a>
+      <a href="taj-mahal.html" class="wcard r">
+        <div class="wcard__media ph--clay"><div class="wcard__ph"><div class="wcard__ph-tag"><span>Heritage</span><span>&#8599;</span></div><div class="wcard__ph-name">Taj Mahal</div></div></div>
+        <div class="wcard__body">
+          <div class="wcard__row"><h3 class="wcard__title">Energy in Every Cup</h3><span class="wcard__client">Taj Mahal</span></div>
+          <p class="wcard__desc">Heritage premix coffee, refreshed for today.</p>
+          <span class="wcard__cta">View case study &#8594;</span>
+        </div>
+      </a>
+      <a href="teh-cap-panglima.html" class="wcard r">
+        <div class="wcard__media ph--coral"><div class="wcard__ph"><div class="wcard__ph-tag"><span>Rebrand</span><span>&#8599;</span></div><div class="wcard__ph-name">Teh Cap Panglima</div></div></div>
+        <div class="wcard__body">
+          <div class="wcard__row"><h3 class="wcard__title">Kung Fu Tarik</h3><span class="wcard__client">Teh Cap Panglima</span></div>
+          <p class="wcard__desc">A full rebrand across five SKUs.</p>
+          <span class="wcard__cta">View case study &#8594;</span>
+        </div>
+      </a>
+      <a href="dragonfruit.html" class="wcard r">
+        <div class="wcard__media ph--dark"><div class="wcard__ph"><div class="wcard__ph-tag"><span>Social</span><span>&#8599;</span></div><div class="wcard__ph-name">Dragonfruit</div></div></div>
+        <div class="wcard__body">
+          <div class="wcard__row"><h3 class="wcard__title">Dark Mocha</h3><span class="wcard__client">Dragonfruit</span></div>
+          <p class="wcard__desc">Bold Malay language coffee content.</p>
+          <span class="wcard__cta">View case study &#8594;</span>
+        </div>
+      </a>
+      <a href="tapak-group.html" class="wcard r">
+        <div class="wcard__media ph--lime"><div class="wcard__ph"><div class="wcard__ph-tag"><span>Branding</span><span>&#8599;</span></div><div class="wcard__ph-name">Tapak Group</div></div></div>
+        <div class="wcard__body">
+          <div class="wcard__row"><h3 class="wcard__title">Awareness Build</h3><span class="wcard__client">Tapak Group</span></div>
+          <p class="wcard__desc">Branding for awareness and engagement.</p>
+          <span class="wcard__cta">View case study &#8594;</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SYSTEMS & TOOLS (dark band) ================= -->
+<section class="section band-dark" id="systems">
+  <div class="wrap">
+    <div class="section__head">
+      <div>
+        <h2 class="r">I don't just make content. I build the machines that make it.</h2>
+      </div>
+      <p class="side r r-3">Internal tools, AI agents, and reusable systems that make a whole content team faster.</p>
+    </div>
+
+    <div class="work">
+
+      <article class="card wide r">
+        <div class="card__media ph--dark">
+          <img src="images/web-hub.jpg" alt="Newnormz internal web hub" onload="this.classList.add('is-loaded')" onerror="this.remove()">
+          <div class="card__ph"><div class="card__ph-tag"><span>Internal Tool</span><span>07</span></div><div class="card__ph-name">The<br>Content Hub</div></div>
+        </div>
+        <div class="card__body">
+          <div class="card__row"><h3 class="card__title">macOS Style Content Hub</h3><span class="card__client">Newnormz</span></div>
+          <p class="card__desc">A desktop style internal web hub that ties Google Drive folders and project status into one calm, familiar interface.</p>
+          <div class="card__tags"><span class="tag">Web App</span><span class="tag">Drive + Sheets</span><span class="tag">Ops</span></div>
+        </div>
+      </article>
+
+      <article class="card narrow r r-2">
+        <div class="card__media ph--dark">
+          <img src="images/contentops.jpg" alt="ContentOps Agent" onload="this.classList.add('is-loaded')" onerror="this.remove()">
+          <div class="card__ph"><div class="card__ph-tag"><span>AI Agent</span><span>08</span></div><div class="card__ph-name">ContentOps<br>Agent</div></div>
+        </div>
+        <div class="card__body">
+          <div class="card__row"><h3 class="card__title">ContentOps Agent</h3><span class="card__client">Concept</span></div>
+          <p class="card__desc">Idea generation, hook scoring, and automatic logging in one agent, built to kill the content team's biggest daily frictions.</p>
+          <div class="card__tags"><span class="tag">AI</span><span class="tag">Automation</span></div>
+        </div>
+      </article>
+
+      <article class="card narrow r">
+        <div class="card__media ph--dark">
+          <img src="images/kanban.jpg" alt="Kanban project dashboard" onload="this.classList.add('is-loaded')" onerror="this.remove()">
+          <div class="card__ph"><div class="card__ph-tag"><span>Dashboard</span><span>09</span></div><div class="card__ph-name">Live<br>Kanban</div></div>
+        </div>
+        <div class="card__body">
+          <div class="card__row"><h3 class="card__title">Project Status Board</h3><span class="card__client">Newnormz</span></div>
+          <p class="card__desc">A Kanban dashboard wired to Google Sheets so the whole team sees project status in real time.</p>
+          <div class="card__tags"><span class="tag">Dashboard</span><span class="tag">Sheets API</span></div>
+        </div>
+      </article>
+
+      <article class="card wide r r-2">
+        <div class="card__media ph--dark">
+          <img src="images/skills.jpg" alt="Reusable Claude skills" onload="this.classList.add('is-loaded')" onerror="this.remove()">
+          <div class="card__ph"><div class="card__ph-tag"><span>Automation</span><span>10</span></div><div class="card__ph-name">A Library<br>of Skills</div></div>
+        </div>
+        <div class="card__body">
+          <div class="card__row"><h3 class="card__title">Reusable AI Skills</h3><span class="card__client">Newnormz</span></div>
+          <p class="card__desc">A suite of custom skills, from case study decks to client proposal generators, daily reporting, and web design, that turn repeat work into one command.</p>
+          <div class="card__tags"><span class="tag">Claude Skills</span><span class="tag">PPTX / DOCX</span><span class="tag">Productivity</span></div>
+        </div>
+      </article>
+
+      <article class="card full r">
+        <div class="card__media ph--dark" style="aspect-ratio:21/9">
+          <img src="images/gemini-omni.jpg" alt="Gemini Omni research deck" onload="this.classList.add('is-loaded')" onerror="this.remove()">
+          <div class="card__ph"><div class="card__ph-tag"><span>Research &amp; Deck</span><span>11</span></div><div class="card__ph-name">Gemini Omni · AI Video Workflows</div></div>
+        </div>
+        <div class="card__body">
+          <div class="card__row"><h3 class="card__title">Gemini Omni Research &amp; Deck</h3><span class="card__client">Newnormz</span></div>
+          <p class="card__desc">A branded research PDF and presentation on applying Gemini Omni to agency AI video workflows, turning frontier tooling into something a team can actually use.</p>
+          <div class="card__tags"><span class="tag">Research</span><span class="tag">Presentation</span><span class="tag">AI Strategy</span></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= PERSONAL ================= -->
+<section class="section" id="personal">
+  <div class="wrap">
+    <div class="section__head">
+      <div>
+        <h2 class="r">Projects nobody asked me to make, which is exactly why they're mine.</h2>
+      </div>
+      <p class="side r r-3">Where I test ideas, build brands from zero, and follow curiosity for its own sake.</p>
+    </div>
+
+    <div class="work">
+
+      <article class="card wide r">
+        <div class="card__media ph--lime">
+          <img src="images/tearai.jpg" alt="TeaRai brand identity" onload="this.classList.add('is-loaded')" onerror="this.remove()">
+          <div class="card__ph"><div class="card__ph-tag"><span>Brand From Zero</span><span>12</span></div><div class="card__ph-name">TeaRai &amp;<br>Rai the Otter</div></div>
+        </div>
+        <div class="card__body">
+          <div class="card__row"><h3 class="card__title">TeaRai, Fruit Tea Brand</h3><span class="card__client">Personal</span></div>
+          <p class="card__desc">A complete fruit tea brand built from scratch: mascot (Rai the Otter), a full colour system, a 52 slide brand deck, and a governance framework.</p>
+          <div class="card__tags"><span class="tag">Brand Identity</span><span class="tag">Mascot Design</span><span class="tag">Guidelines</span></div>
+        </div>
+      </article>
+
+      <article class="card narrow tall r r-2">
+        <div class="card__media ph--coral">
+          <img src="images/atelier.jpg" alt="ATELIER brand designer GPT" onload="this.classList.add('is-loaded')" onerror="this.remove()">
+          <div class="card__ph"><div class="card__ph-tag"><span>AI Tool</span><span>13</span></div><div class="card__ph-name">ATELIER<br>GPT</div></div>
+        </div>
+        <div class="card__body">
+          <div class="card__row"><h3 class="card__title">ATELIER Designer GPT</h3><span class="card__client">Personal</span></div>
+          <p class="card__desc">A senior brand designer GPT with real Malaysian multicultural intelligence, multilingual typography, and a check for negative meanings baked in.</p>
+          <div class="card__tags"><span class="tag">Custom GPT</span><span class="tag">Brand AI</span></div>
+        </div>
+      </article>
+
+      <article class="card narrow r">
+        <div class="card__media ph--clay">
+          <img src="images/ioo-ebook.jpg" alt="IOO framework e-book" onload="this.classList.add('is-loaded')" onerror="this.remove()">
+          <div class="card__ph"><div class="card__ph-tag"><span>Digital Product</span><span>14</span></div><div class="card__ph-name">51 Prompts<br>Ebook</div></div>
+        </div>
+        <div class="card__body">
+          <div class="card__row"><h3 class="card__title">The IOO Prompt Ebook</h3><span class="card__client">Personal</span></div>
+          <p class="card__desc">A bilingual ebook of 51 image prompts for Malaysian entrepreneurs, with glossaries for design and photography terms.</p>
+          <div class="card__tags"><span class="tag">Digital Product</span><span class="tag">Bilingual</span></div>
+        </div>
+      </article>
+
+      <article class="card narrow r r-2">
+        <div class="card__media ph--lime">
+          <img src="images/prompt-packs.jpg" alt="Identity Lock prompt packs" onload="this.classList.add('is-loaded')" onerror="this.remove()">
+          <div class="card__ph"><div class="card__ph-tag"><span>AI Workflow</span><span>15</span></div><div class="card__ph-name">Identity<br>Lock</div></div>
+        </div>
+        <div class="card__body">
+          <div class="card__row"><h3 class="card__title">50 Angle Portrait Packs</h3><span class="card__client">R&amp;D</span></div>
+          <p class="card__desc">Consistent character portrait workflows using Identity Lock prompt blocks. Same face, fifty angles.</p>
+          <div class="card__tags"><span class="tag">AI Image</span><span class="tag">Consistency</span></div>
+        </div>
+      </article>
+
+      <article class="card wide r">
+        <div class="card__media ph--clay">
+          <img src="images/broll.jpg" alt="Travel B-roll lyrics" onload="this.classList.add('is-loaded')" onerror="this.remove()">
+          <div class="card__ph"><div class="card__ph-tag"><span>Writing</span><span>16</span></div><div class="card__ph-name">Travel<br>B Roll Lyrics</div></div>
+        </div>
+        <div class="card__body">
+          <div class="card__row"><h3 class="card__title">Dance Pop Travel Lyrics</h3><span class="card__client">Newnormz Channels</span></div>
+          <p class="card__desc">Original dance pop lyrics scored to a Shenzhen, Guangzhou, and Hong Kong travel reel. Proof that strategy and play live in the same head.</p>
+          <div class="card__tags"><span class="tag">Songwriting</span><span class="tag">Video</span></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="section" id="about">
+  <div class="wrap about">
+    <div class="about__media r">
+      <img src="images/profile.jpg" alt="Zainul Sedek" onload="this.classList.add('is-loaded')" onerror="this.remove()">
+      <div class="card__ph"><div class="card__ph-tag"><span>Hello</span><span>✦</span></div><div class="card__ph-name">That's<br>me →</div></div>
+    </div>
+    <div class="r r-2">
+      <span class="eyebrow" style="margin-bottom:1.5rem;display:inline-flex">A little about me</span>
+      <h2>I'm a marketer who fell for the craft.</h2>
+      <p>I've spent the last decade moving between <b>retail floors, operations, and content studios</b>, and every stop taught me the same thing: people don't buy features, they buy feeling.</p>
+      <p>Early on, I grew a TikTok account from <em>9,000 to 500,000 followers in seven months</em> and racked up over 20 million views. These days I lead content strategy at Newnormz, where I've helped secure <em>over RM1.3M in client projects</em> and quietly rebuilt how the team works with AI.</p>
+      <p>I run hot on ideas and energy. I'd rather ship ten bold things and learn than polish one safe one forever. If that sounds like your kind of trouble, we'll get along.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROOF ================= -->
+<section class="section proof">
+  <div class="wrap">
+    <span class="eyebrow r" style="color:var(--bone);margin-bottom:2.5rem;display:inline-flex">The receipts</span>
+    <div class="proof__grid">
+      <div class="stat r">
+        <div class="stat__num" data-count="500" data-suffix="K">0</div>
+        <div class="stat__label">Followers grown from 9K in just 7 months</div>
+      </div>
+      <div class="stat r r-2">
+        <div class="stat__num" data-count="20" data-suffix="M+">0</div>
+        <div class="stat__label">Cumulative views generated across campaigns</div>
+      </div>
+      <div class="stat r r-3">
+        <div class="stat__num"><small>RM</small><span data-count="1.3" data-suffix="M+" data-decimals="1">0</span></div>
+        <div class="stat__label">In client projects secured &amp; pitched</div>
+      </div>
+      <div class="stat r r-4">
+        <div class="stat__num" data-count="16" data-suffix="+">0</div>
+        <div class="stat__label">Brands, tools &amp; personal projects shipped</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="section__head">
+      <div>
+        <h2 class="r">Need a hand? Here's how I can help.</h2>
+      </div>
+      <p class="side r r-3">Freelance and consulting services for brands and teams who want sharper creative and a real point of view.</p>
+    </div>
+
+    <div class="services">
+      <div class="service r">
+        <span class="service__no">01</span>
+        <span class="service__name">AI Workshop<br>(Creative)</span>
+        <span class="service__desc">Hands on sessions that teach your team to actually build with AI for real creative output.</span>
+      </div>
+      <div class="service r r-2">
+        <span class="service__no">02</span>
+        <span class="service__name">Branding</span>
+        <span class="service__desc">Identity, positioning, and brand systems built from the ground up.</span>
+      </div>
+      <div class="service r r-3">
+        <span class="service__no">03</span>
+        <span class="service__name">Graphic Design</span>
+        <span class="service__desc">Social, packaging, and campaign design that stops the scroll.</span>
+      </div>
+      <div class="service r">
+        <span class="service__no">04</span>
+        <span class="service__name">Videography</span>
+        <span class="service__desc">Content shot and directed for short form and social.</span>
+      </div>
+      <div class="service r r-2">
+        <span class="service__no">05</span>
+        <span class="service__name">Video Editing</span>
+        <span class="service__desc">Punchy, retention first edits for TikTok, Reels, and beyond.</span>
+      </div>
+      <div class="service r r-3">
+        <span class="service__no">06</span>
+        <span class="service__name">Brand Consulting</span>
+        <span class="service__desc">Strategy and direction to sharpen how your brand shows up.</span>
+      </div>
+    </div>
+
+    <div class="services__cta r">
+      <a href="https://calendar.app.google/REPLACE-WITH-YOUR-LINK" target="_blank" rel="noopener" class="btn btn--fill" id="bookBtn">Book a session</a>
+      <a href="mailto:zainulsedek.main@gmail.com" class="btn">Email me</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="section contact" id="contact">
+  <div class="wrap">
+    <span class="eyebrow contact__pre r" style="display:inline-flex">Got something brewing?</span>
+    <h2 class="r r-2">Let's make<br>something <em>worth<br>stopping for.</em></h2>
+    <div class="r r-3">
+      <a href="mailto:zainulsedek.main@gmail.com" class="contact__mail">
+        zainulsedek.main@gmail.com
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6"/></svg>
+      </a>
+    </div>
+    <div class="contact__links r r-4">
+      <a href="https://www.linkedin.com/in/zainul-sedek-133a5a1b0/" target="_blank" rel="noopener" class="btn">LinkedIn</a>
+      <a href="https://wa.me/60132861803" target="_blank" rel="noopener" class="btn">WhatsApp</a>
+      <a href="#" class="btn btn--fill" id="resumeBtn">Download Résumé</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="wrap footer__row">
+    <b>Zainul Sedek</b>
+    <span>Content &amp; Brand Strategist · Kuala Lumpur</span>
+    <span>© <span id="yr"></span> · Made with a lot of coffee.</span>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ---- résumé button hint (file added later) ---- */
+document.getElementById('resumeBtn').addEventListener('click', function(e){
+  // point this at your CV file once uploaded, e.g. href="images/zainul-resume.pdf"
+  if(this.getAttribute('href') === '#'){
+    e.preventDefault();
+    alert('Add your résumé PDF to the site folder and set this button\'s link to it (e.g. zainul-resume.pdf).');
+  }
+});
+
+document.getElementById('bookBtn').addEventListener('click', function(e){
+  // replace the href with your Google Calendar appointment/booking link
+  if(this.getAttribute('href').indexOf('REPLACE') !== -1){
+    e.preventDefault();
+    alert('Add your Google Calendar booking link to the "Book a session" button (replace the placeholder href).');
+  }
+});
+
+if(!reduce && window.gsap){
+  gsap.registerPlugin(ScrollTrigger);
+
+  /* hero headline reveal */
+  gsap.from('.hero__display .line > span', {
+    y:50, opacity:0, duration:1, ease:'power4.out', stagger:.1, delay:.15
+  });
+
+  /* generic reveal-on-scroll */
+  gsap.utils.toArray('.r').forEach(el=>{
+    ScrollTrigger.create({
+      trigger:el, start:'top 88%',
+      onEnter:()=>el.classList.add('in')
+    });
+  });
+
+  /* hero blob parallax */
+  gsap.utils.toArray('.hero__blob').forEach(b=>{
+    const sp = parseFloat(b.dataset.speed) || .1;
+    gsap.to(b,{yPercent:sp*100,ease:'none',
+      scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+  });
+
+  /* image parallax inside cards */
+  gsap.utils.toArray('.card__media img, .about__media img').forEach(img=>{
+    gsap.fromTo(img,{yPercent:-6},{yPercent:6,ease:'none',
+      scrollTrigger:{trigger:img,start:'top bottom',end:'bottom top',scrub:true}});
+  });
+
+  /* marquee scroll */
+  const track = document.getElementById('marquee');
+  gsap.to(track,{xPercent:-50,ease:'none',
+    scrollTrigger:{trigger:'.marquee',start:'top bottom',end:'bottom top',scrub:1}});
+
+  /* number count-up */
+  gsap.utils.toArray('[data-count]').forEach(el=>{
+    const end = parseFloat(el.dataset.count);
+    const dec = parseInt(el.dataset.decimals||'0');
+    const suf = el.dataset.suffix||'';
+    const obj = {v:0};
+    ScrollTrigger.create({trigger:el,start:'top 85%',once:true,onEnter:()=>{
+      gsap.to(obj,{v:end,duration:1.8,ease:'power2.out',
+        onUpdate:()=>{el.textContent = obj.v.toFixed(dec)+suf;}});
+    }});
+  });
+} else {
+  document.querySelectorAll('.r').forEach(el=>el.classList.add('in'));
+  document.querySelectorAll('.hero__display .line > span').forEach(el=>el.style.transform='none');
+  document.querySelectorAll('[data-count]').forEach(el=>{
+    el.textContent = parseFloat(el.dataset.count).toFixed(parseInt(el.dataset.decimals||'0'))+(el.dataset.suffix||'');
+  });
+}
+
+/* nav hide on scroll down, show on scroll up */
+let lastY = 0;
+const nav = document.getElementById('nav');
+window.addEventListener('scroll',()=>{
+  const y = window.scrollY;
+  if(y > lastY && y > 400){ nav.classList.add('hide'); }
+  else { nav.classList.remove('hide'); }
+  lastY = y;
+},{passive:true});
+</script>
+</body>
+</html>
