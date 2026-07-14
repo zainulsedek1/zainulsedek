@@ -3,8 +3,8 @@
 **Structure (multi-page):**
 - `index.html` — homepage (hero, work grid, systems, personal, about, services, contact)
 - `styles.css` — shared styles for all case-study pages
-- One case-study page per client: `amina-rose.html`, `binggrae.html`, `chek-hup.html`, `china-airlines.html`, `dragonfruit.html`, `genki-sushi.html`, `hot-and-roll.html`, `mfm-cap-ros.html`, `sjkp.html`, `taiwan-excellence.html`, `taj-mahal.html`, `tapak-group.html`, `teh-cap-panglima.html`
-- `images/` — all photos and videos
+- `work.html` — full portfolio grid (all clients, systems, personal), linked from the homepage "View all" links
+- Case-study pages for the 7 live clients: `amina-rose.html`, `binggrae.html`, `chek-hup.html`, `china-airlines.html`, `genki-sushi.html`, `hot-and-roll.html`, `taiwan-excellence.html`
 
 Deploy the whole folder. Each client card on the homepage links to its case-study page. Pages with real assets (Amina, Binggrae) are populated; the rest have the write-up ready and a placeholder for visuals you add later (same way we filled Binggrae).
 
@@ -40,6 +40,9 @@ Any slot without a matching file keeps its designed colour panel — nothing bre
 | China Airlines (video) | `china-airlines-video.mp4` (+ poster) |
 | Genki Sushi (Sept) | `genki.jpg`, `genki-1.jpg` … `genki-8.jpg` |
 | Genki Sushi (videos) | `genki-vt1.mp4` … `genki-vt3.mp4` (+ posters) |
+| Taiwan Excellence (July 2026) | `taiwan-excellence.jpg`, `taiwan-excellence-1/2/3.jpg` |
+| Taiwan Excellence (videos) | `taiwan-excellence-loop1/2.mp4`, `taiwan-excellence-vt1/2/3.mp4` (+ posters) |
+| Hot & Roll (Jan/Feb 2025) | POV: `hot-roll-pov1..5`, `hot-roll-homemade/singgah/cubalagi`; Food: `hot-roll-food1..5`, `hot-roll-order/raya` (all .mp4 + posters) |
 | China Airlines | `images/china-airlines.jpg` |
 | Genki Sushi | `images/genki-salmon.jpg` |
 | Hot & Roll | `images/hot-and-roll.jpg` |
@@ -68,3 +71,13 @@ Drop your CV (e.g. `zainul-resume.pdf`) next to `index.html`, then change the
 ### Hero video
 Name it `images/hero.mp4` and swap the commented `<video>` block into the hero
 (instructions are right there in the HTML).
+
+
+## Images not showing on GitHub Pages?
+This is almost always an upload issue, not a code issue. Check:
+1. Your repo has `index.html` AND an `images/` folder at the SAME level (the root).
+2. Click into `images/` on GitHub and confirm the `.jpg` / `.mp4` files are actually there.
+3. If the folder is missing, re-upload: drag the CONTENTS of the unzipped folder (including `images/`) into GitHub's uploader, then commit.
+4. A `.nojekyll` file is included to stop GitHub's Jekyll from interfering.
+
+Easiest alternative: drag the whole unzipped folder onto Netlify. It handles nested folders reliably.

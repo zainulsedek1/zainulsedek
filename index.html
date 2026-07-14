@@ -341,6 +341,11 @@ h1,h2,h3,h4{
 .feature--link:hover .feature__cta{gap:1rem}
 .feature--link:hover .feature__gallery img{filter:saturate(1.05)}
 
+.wgrid--two{grid-template-columns:repeat(2,1fr)}
+@media(max-width:700px){.wgrid--two{grid-template-columns:1fr}}
+.viewall{display:inline-flex;align-items:center;gap:.5rem;margin-top:2.2rem;font-weight:600;font-size:.95rem;color:var(--coral-deep);transition:gap .3s}
+.viewall:hover{gap:.9rem}
+.wcard--static{cursor:default}
 /* uniform linked work grid (client case studies) */
 .wgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
 @media(max-width:900px){.wgrid{grid-template-columns:repeat(2,1fr)}}
@@ -538,24 +543,8 @@ h1,h2,h3,h4{
       <p class="side r r-3">Branding and content for brands across food, beverage, aviation, and the public sector, each one chasing the same thing: sharper awareness and deeper engagement.</p>
     </div>
 
-        <div class="wgrid">
-      <a href="amina-rose.html" class="wcard r">
-        <div class="wcard__media"><img src="images/amina-rose.jpg" alt="Amina Rose" loading="lazy"></div>
-        <div class="wcard__body">
-          <div class="wcard__row"><h3 class="wcard__title">Corn Cordial</h3><span class="wcard__client">Amina Rose</span></div>
-          <p class="wcard__desc">Premium corn cordial, both a drink and a cooking base.</p>
-          <span class="wcard__cta">View case study &#8594;</span>
-        </div>
-      </a>
-      <a href="chek-hup.html" class="wcard r">
-        <div class="wcard__media"><img src="images/chek-hup.jpg" alt="Chek Hup" loading="lazy"></div>
-        <div class="wcard__body">
-          <div class="wcard__row"><h3 class="wcard__title">A New Chapter for CH</h3><span class="wcard__client">Chek Hup</span></div>
-          <p class="wcard__desc">Ipoh heritage brand entering the Malay market.</p>
-          <span class="wcard__cta">View case study &#8594;</span>
-        </div>
-      </a>
-      <a href="binggrae.html" class="wcard r">
+        <div class="wgrid wgrid--two">
+<a href="binggrae.html" class="wcard r">
         <div class="wcard__media"><img src="images/binggrae.jpg" alt="Binggrae" loading="lazy"></div>
         <div class="wcard__body">
           <div class="wcard__row"><h3 class="wcard__title">Taste the Joy</h3><span class="wcard__client">Binggrae</span></div>
@@ -563,163 +552,43 @@ h1,h2,h3,h4{
           <span class="wcard__cta">View case study &#8594;</span>
         </div>
       </a>
-      <a href="china-airlines.html" class="wcard r">
-        <div class="wcard__media"><img src="images/china-airlines.jpg" alt="China Airlines" loading="lazy"></div>
+<a href="chek-hup.html" class="wcard r">
+        <div class="wcard__media"><img src="images/chek-hup.jpg" alt="Chek Hup" loading="lazy"></div>
         <div class="wcard__body">
-          <div class="wcard__row"><h3 class="wcard__title">Destination Series</h3><span class="wcard__client">China Airlines</span></div>
-          <p class="wcard__desc">A ten route series with strict visual DNA.</p>
-          <span class="wcard__cta">View case study &#8594;</span>
-        </div>
-      </a>
-      <a href="genki-sushi.html" class="wcard r">
-        <div class="wcard__media"><img src="images/genki.jpg" alt="Genki Sushi" loading="lazy"></div>
-        <div class="wcard__body">
-          <div class="wcard__row"><h3 class="wcard__title">Kasi Senyum</h3><span class="wcard__client">Genki Sushi</span></div>
-          <p class="wcard__desc">The Genki Kasi Senyum September campaign.</p>
-          <span class="wcard__cta">View case study &#8594;</span>
-        </div>
-      </a>
-      <a href="hot-and-roll.html" class="wcard r">
-        <div class="wcard__media ph--clay"><div class="wcard__ph"><div class="wcard__ph-tag"><span>Short Form</span><span>&#8599;</span></div><div class="wcard__ph-name">Hot &amp; Roll</div></div></div>
-        <div class="wcard__body">
-          <div class="wcard__row"><h3 class="wcard__title">POV Food Video</h3><span class="wcard__client">Hot &amp; Roll</span></div>
-          <p class="wcard__desc">Nostalgic short form video for a wrap chain.</p>
-          <span class="wcard__cta">View case study &#8594;</span>
-        </div>
-      </a>
-      <a href="mfm-cap-ros.html" class="wcard r">
-        <div class="wcard__media ph--lime"><div class="wcard__ph"><div class="wcard__ph-tag"><span>Recipe Led</span><span>&#8599;</span></div><div class="wcard__ph-name">MFM Cap Ros</div></div></div>
-        <div class="wcard__body">
-          <div class="wcard__row"><h3 class="wcard__title">Cap Ros Online</h3><span class="wcard__client">MFM Cap Ros</span></div>
-          <p class="wcard__desc">A baking staple of fifty years, brought online.</p>
-          <span class="wcard__cta">View case study &#8594;</span>
-        </div>
-      </a>
-      <a href="sjkp.html" class="wcard r">
-        <div class="wcard__media ph--dark"><div class="wcard__ph"><div class="wcard__ph-tag"><span>Public Sector</span><span>&#8599;</span></div><div class="wcard__ph-name">SJKP</div></div></div>
-        <div class="wcard__body">
-          <div class="wcard__row"><h3 class="wcard__title">Education First</h3><span class="wcard__client">SJKP</span></div>
-          <p class="wcard__desc">Home financing, made human for the public.</p>
-          <span class="wcard__cta">View case study &#8594;</span>
-        </div>
-      </a>
-      <a href="taiwan-excellence.html" class="wcard r">
-        <div class="wcard__media ph--dark"><div class="wcard__ph"><div class="wcard__ph-tag"><span>Flagship</span><span>&#8599;</span></div><div class="wcard__ph-name">Taiwan Excellence</div></div></div>
-        <div class="wcard__body">
-          <div class="wcard__row"><h3 class="wcard__title">Taiwan Excellence</h3><span class="wcard__client">Taiwan Excellence</span></div>
-          <p class="wcard__desc">The flagship Taiwan innovation account.</p>
-          <span class="wcard__cta">View case study &#8594;</span>
-        </div>
-      </a>
-      <a href="taj-mahal.html" class="wcard r">
-        <div class="wcard__media ph--clay"><div class="wcard__ph"><div class="wcard__ph-tag"><span>Heritage</span><span>&#8599;</span></div><div class="wcard__ph-name">Taj Mahal</div></div></div>
-        <div class="wcard__body">
-          <div class="wcard__row"><h3 class="wcard__title">Energy in Every Cup</h3><span class="wcard__client">Taj Mahal</span></div>
-          <p class="wcard__desc">Heritage premix coffee, refreshed for today.</p>
-          <span class="wcard__cta">View case study &#8594;</span>
-        </div>
-      </a>
-      <a href="teh-cap-panglima.html" class="wcard r">
-        <div class="wcard__media ph--coral"><div class="wcard__ph"><div class="wcard__ph-tag"><span>Rebrand</span><span>&#8599;</span></div><div class="wcard__ph-name">Teh Cap Panglima</div></div></div>
-        <div class="wcard__body">
-          <div class="wcard__row"><h3 class="wcard__title">Kung Fu Tarik</h3><span class="wcard__client">Teh Cap Panglima</span></div>
-          <p class="wcard__desc">A full rebrand across five SKUs.</p>
-          <span class="wcard__cta">View case study &#8594;</span>
-        </div>
-      </a>
-      <a href="dragonfruit.html" class="wcard r">
-        <div class="wcard__media ph--dark"><div class="wcard__ph"><div class="wcard__ph-tag"><span>Social</span><span>&#8599;</span></div><div class="wcard__ph-name">Dragonfruit</div></div></div>
-        <div class="wcard__body">
-          <div class="wcard__row"><h3 class="wcard__title">Dark Mocha</h3><span class="wcard__client">Dragonfruit</span></div>
-          <p class="wcard__desc">Bold Malay language coffee content.</p>
-          <span class="wcard__cta">View case study &#8594;</span>
-        </div>
-      </a>
-      <a href="tapak-group.html" class="wcard r">
-        <div class="wcard__media ph--lime"><div class="wcard__ph"><div class="wcard__ph-tag"><span>Branding</span><span>&#8599;</span></div><div class="wcard__ph-name">Tapak Group</div></div></div>
-        <div class="wcard__body">
-          <div class="wcard__row"><h3 class="wcard__title">Awareness Build</h3><span class="wcard__client">Tapak Group</span></div>
-          <p class="wcard__desc">Branding for awareness and engagement.</p>
+          <div class="wcard__row"><h3 class="wcard__title">A New Chapter for CH</h3><span class="wcard__client">Chek Hup</span></div>
+          <p class="wcard__desc">Ipoh heritage brand entering the Malay market.</p>
           <span class="wcard__cta">View case study &#8594;</span>
         </div>
       </a>
     </div>
+    <a href="work.html#work" class="viewall r">View all projects &#8594;</a>
   </div>
 </section>
 
 <!-- ================= SYSTEMS & TOOLS (dark band) ================= -->
-<section class="section band-dark" id="systems">
+<section class="section" id="systems">
   <div class="wrap">
     <div class="section__head">
       <div>
-        <h2 class="r">I don't just make content. I build the machines that make it.</h2>
+        <h2 class="r">Systems &amp; tools I have built.</h2>
       </div>
-      <p class="side r r-3">Internal tools, AI agents, and reusable systems that make a whole content team faster.</p>
+      <p class="side r r-3">Internal tools and AI agents that make a whole content team faster.</p>
     </div>
-
-    <div class="work">
-
-      <article class="card wide r">
-        <div class="card__media ph--dark">
-          <img src="images/web-hub.jpg" alt="Newnormz internal web hub" onload="this.classList.add('is-loaded')" onerror="this.remove()">
-          <div class="card__ph"><div class="card__ph-tag"><span>Internal Tool</span><span>07</span></div><div class="card__ph-name">The<br>Content Hub</div></div>
+    <div class="wgrid wgrid--two">
+      <div class="wcard wcard--static r">
+        <div class="wcard__media ph--dark"><div class="wcard__ph"><div class="wcard__ph-tag"><span>Concept</span><span></span></div><div class="wcard__ph-name">ContentOps Agent</div></div></div>
+        <div class="wcard__body">
+          <p class="wcard__desc" style="margin-top:0">Idea generation, hook scoring, and automatic logging in one agent.</p>
         </div>
-        <div class="card__body">
-          <div class="card__row"><h3 class="card__title">macOS Style Content Hub</h3><span class="card__client">Newnormz</span></div>
-          <p class="card__desc">A desktop style internal web hub that ties Google Drive folders and project status into one calm, familiar interface.</p>
-          <div class="card__tags"><span class="tag">Web App</span><span class="tag">Drive + Sheets</span><span class="tag">Ops</span></div>
+      </div>
+      <div class="wcard wcard--static r">
+        <div class="wcard__media ph--dark"><div class="wcard__ph"><div class="wcard__ph-tag"><span>Newnormz</span><span></span></div><div class="wcard__ph-name">The Content Hub</div></div></div>
+        <div class="wcard__body">
+          <p class="wcard__desc" style="margin-top:0">A desktop style internal hub for Drive and project status.</p>
         </div>
-      </article>
-
-      <article class="card narrow r r-2">
-        <div class="card__media ph--dark">
-          <img src="images/contentops.jpg" alt="ContentOps Agent" onload="this.classList.add('is-loaded')" onerror="this.remove()">
-          <div class="card__ph"><div class="card__ph-tag"><span>AI Agent</span><span>08</span></div><div class="card__ph-name">ContentOps<br>Agent</div></div>
-        </div>
-        <div class="card__body">
-          <div class="card__row"><h3 class="card__title">ContentOps Agent</h3><span class="card__client">Concept</span></div>
-          <p class="card__desc">Idea generation, hook scoring, and automatic logging in one agent, built to kill the content team's biggest daily frictions.</p>
-          <div class="card__tags"><span class="tag">AI</span><span class="tag">Automation</span></div>
-        </div>
-      </article>
-
-      <article class="card narrow r">
-        <div class="card__media ph--dark">
-          <img src="images/kanban.jpg" alt="Kanban project dashboard" onload="this.classList.add('is-loaded')" onerror="this.remove()">
-          <div class="card__ph"><div class="card__ph-tag"><span>Dashboard</span><span>09</span></div><div class="card__ph-name">Live<br>Kanban</div></div>
-        </div>
-        <div class="card__body">
-          <div class="card__row"><h3 class="card__title">Project Status Board</h3><span class="card__client">Newnormz</span></div>
-          <p class="card__desc">A Kanban dashboard wired to Google Sheets so the whole team sees project status in real time.</p>
-          <div class="card__tags"><span class="tag">Dashboard</span><span class="tag">Sheets API</span></div>
-        </div>
-      </article>
-
-      <article class="card wide r r-2">
-        <div class="card__media ph--dark">
-          <img src="images/skills.jpg" alt="Reusable Claude skills" onload="this.classList.add('is-loaded')" onerror="this.remove()">
-          <div class="card__ph"><div class="card__ph-tag"><span>Automation</span><span>10</span></div><div class="card__ph-name">A Library<br>of Skills</div></div>
-        </div>
-        <div class="card__body">
-          <div class="card__row"><h3 class="card__title">Reusable AI Skills</h3><span class="card__client">Newnormz</span></div>
-          <p class="card__desc">A suite of custom skills, from case study decks to client proposal generators, daily reporting, and web design, that turn repeat work into one command.</p>
-          <div class="card__tags"><span class="tag">Claude Skills</span><span class="tag">PPTX / DOCX</span><span class="tag">Productivity</span></div>
-        </div>
-      </article>
-
-      <article class="card full r">
-        <div class="card__media ph--dark" style="aspect-ratio:21/9">
-          <img src="images/gemini-omni.jpg" alt="Gemini Omni research deck" onload="this.classList.add('is-loaded')" onerror="this.remove()">
-          <div class="card__ph"><div class="card__ph-tag"><span>Research &amp; Deck</span><span>11</span></div><div class="card__ph-name">Gemini Omni · AI Video Workflows</div></div>
-        </div>
-        <div class="card__body">
-          <div class="card__row"><h3 class="card__title">Gemini Omni Research &amp; Deck</h3><span class="card__client">Newnormz</span></div>
-          <p class="card__desc">A branded research PDF and presentation on applying Gemini Omni to agency AI video workflows, turning frontier tooling into something a team can actually use.</p>
-          <div class="card__tags"><span class="tag">Research</span><span class="tag">Presentation</span><span class="tag">AI Strategy</span></div>
-        </div>
-      </article>
-
+      </div>
     </div>
+    <a href="work.html#systems" class="viewall r">View all systems &#8594;</a>
   </div>
 </section>
 
@@ -728,74 +597,25 @@ h1,h2,h3,h4{
   <div class="wrap">
     <div class="section__head">
       <div>
-        <h2 class="r">Projects nobody asked me to make, which is exactly why they're mine.</h2>
+        <h2 class="r">Projects nobody asked me to make.</h2>
       </div>
-      <p class="side r r-3">Where I test ideas, build brands from zero, and follow curiosity for its own sake.</p>
+      <p class="side r r-3">Where I test ideas, build brands from zero, and follow curiosity.</p>
     </div>
-
-    <div class="work">
-
-      <article class="card wide r">
-        <div class="card__media ph--lime">
-          <img src="images/tearai.jpg" alt="TeaRai brand identity" onload="this.classList.add('is-loaded')" onerror="this.remove()">
-          <div class="card__ph"><div class="card__ph-tag"><span>Brand From Zero</span><span>12</span></div><div class="card__ph-name">TeaRai &amp;<br>Rai the Otter</div></div>
+    <div class="wgrid wgrid--two">
+      <div class="wcard wcard--static r">
+        <div class="wcard__media ph--lime"><div class="wcard__ph"><div class="wcard__ph-tag"><span>Personal</span><span></span></div><div class="wcard__ph-name">TeaRai</div></div></div>
+        <div class="wcard__body">
+          <p class="wcard__desc" style="margin-top:0">A full fruit tea brand built from scratch.</p>
         </div>
-        <div class="card__body">
-          <div class="card__row"><h3 class="card__title">TeaRai, Fruit Tea Brand</h3><span class="card__client">Personal</span></div>
-          <p class="card__desc">A complete fruit tea brand built from scratch: mascot (Rai the Otter), a full colour system, a 52 slide brand deck, and a governance framework.</p>
-          <div class="card__tags"><span class="tag">Brand Identity</span><span class="tag">Mascot Design</span><span class="tag">Guidelines</span></div>
+      </div>
+      <div class="wcard wcard--static r">
+        <div class="wcard__media ph--coral"><div class="wcard__ph"><div class="wcard__ph-tag"><span>Personal</span><span></span></div><div class="wcard__ph-name">ATELIER GPT</div></div></div>
+        <div class="wcard__body">
+          <p class="wcard__desc" style="margin-top:0">A senior brand designer GPT with Malaysian intelligence.</p>
         </div>
-      </article>
-
-      <article class="card narrow tall r r-2">
-        <div class="card__media ph--coral">
-          <img src="images/atelier.jpg" alt="ATELIER brand designer GPT" onload="this.classList.add('is-loaded')" onerror="this.remove()">
-          <div class="card__ph"><div class="card__ph-tag"><span>AI Tool</span><span>13</span></div><div class="card__ph-name">ATELIER<br>GPT</div></div>
-        </div>
-        <div class="card__body">
-          <div class="card__row"><h3 class="card__title">ATELIER Designer GPT</h3><span class="card__client">Personal</span></div>
-          <p class="card__desc">A senior brand designer GPT with real Malaysian multicultural intelligence, multilingual typography, and a check for negative meanings baked in.</p>
-          <div class="card__tags"><span class="tag">Custom GPT</span><span class="tag">Brand AI</span></div>
-        </div>
-      </article>
-
-      <article class="card narrow r">
-        <div class="card__media ph--clay">
-          <img src="images/ioo-ebook.jpg" alt="IOO framework e-book" onload="this.classList.add('is-loaded')" onerror="this.remove()">
-          <div class="card__ph"><div class="card__ph-tag"><span>Digital Product</span><span>14</span></div><div class="card__ph-name">51 Prompts<br>Ebook</div></div>
-        </div>
-        <div class="card__body">
-          <div class="card__row"><h3 class="card__title">The IOO Prompt Ebook</h3><span class="card__client">Personal</span></div>
-          <p class="card__desc">A bilingual ebook of 51 image prompts for Malaysian entrepreneurs, with glossaries for design and photography terms.</p>
-          <div class="card__tags"><span class="tag">Digital Product</span><span class="tag">Bilingual</span></div>
-        </div>
-      </article>
-
-      <article class="card narrow r r-2">
-        <div class="card__media ph--lime">
-          <img src="images/prompt-packs.jpg" alt="Identity Lock prompt packs" onload="this.classList.add('is-loaded')" onerror="this.remove()">
-          <div class="card__ph"><div class="card__ph-tag"><span>AI Workflow</span><span>15</span></div><div class="card__ph-name">Identity<br>Lock</div></div>
-        </div>
-        <div class="card__body">
-          <div class="card__row"><h3 class="card__title">50 Angle Portrait Packs</h3><span class="card__client">R&amp;D</span></div>
-          <p class="card__desc">Consistent character portrait workflows using Identity Lock prompt blocks. Same face, fifty angles.</p>
-          <div class="card__tags"><span class="tag">AI Image</span><span class="tag">Consistency</span></div>
-        </div>
-      </article>
-
-      <article class="card wide r">
-        <div class="card__media ph--clay">
-          <img src="images/broll.jpg" alt="Travel B-roll lyrics" onload="this.classList.add('is-loaded')" onerror="this.remove()">
-          <div class="card__ph"><div class="card__ph-tag"><span>Writing</span><span>16</span></div><div class="card__ph-name">Travel<br>B Roll Lyrics</div></div>
-        </div>
-        <div class="card__body">
-          <div class="card__row"><h3 class="card__title">Dance Pop Travel Lyrics</h3><span class="card__client">Newnormz Channels</span></div>
-          <p class="card__desc">Original dance pop lyrics scored to a Shenzhen, Guangzhou, and Hong Kong travel reel. Proof that strategy and play live in the same head.</p>
-          <div class="card__tags"><span class="tag">Songwriting</span><span class="tag">Video</span></div>
-        </div>
-      </article>
-
+      </div>
     </div>
+    <a href="work.html#personal" class="viewall r">View all personal projects &#8594;</a>
   </div>
 </section>
 
