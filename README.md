@@ -52,7 +52,8 @@ Any slot without a matching file keeps its designed colour panel — nothing bre
 | Taj Mahal | `images/taj-mahal.jpg` |
 | Teh Cap Panglima | `images/teh-cap-panglima.jpg` |
 | Dragonfruit Brand | `images/dragonfruit.jpg` |
-| Tapak Group | `images/tapak-group.jpg` |
+| Tapak Group (cover) | `images/tapak-group.jpg` |
+| Tapak Group (case study gallery) | `tapak-group-1.jpg` … `tapak-group-6.jpg` (T'Dahlia ×2, T'Avenue ×1, T'Clover ×3) |
 | Content Hub | `images/web-hub.jpg` |
 | ContentOps Agent | `images/contentops.jpg` |
 | Kanban Board | `images/kanban.jpg` |
