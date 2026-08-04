@@ -54,6 +54,8 @@ Any slot without a matching file keeps its designed colour panel — nothing bre
 | Dragonfruit Brand | `images/dragonfruit.jpg` |
 | Tapak Group (cover) | `images/tapak-group.jpg` |
 | Tapak Group (case study gallery) | `tapak-group-1.jpg` … `tapak-group-6.jpg` (T'Dahlia ×2, T'Avenue ×1, T'Clover ×3) |
+| Akisyah (cover) | `images/akisyah.jpg` |
+| Akisyah (9 videos + posters) | `akisyah-vt1.mp4` … `akisyah-vt9.mp4` (+ `-poster.jpg` each), ordered by views: Putin 1.8M → Gaza 38.1K |
 | Content Hub | `images/web-hub.jpg` |
 | ContentOps Agent | `images/contentops.jpg` |
 | Kanban Board | `images/kanban.jpg` |
