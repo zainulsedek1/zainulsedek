@@ -674,7 +674,7 @@ h1,h2,h3,h4{
     <div class="contact__links r r-4">
       <a href="https://www.linkedin.com/in/zainul-sedek-133a5a1b0/" target="_blank" rel="noopener" class="btn">LinkedIn</a>
       <a href="https://wa.me/60132861803" target="_blank" rel="noopener" class="btn">WhatsApp</a>
-      <a href="#" class="btn btn--fill" id="resumeBtn">Download Résumé</a>
+      <a href="zainul-resume.pdf" target="_blank" rel="noopener" class="btn btn--fill" id="resumeBtn">Download Résumé</a>
     </div>
   </div>
 </section>
@@ -694,15 +694,6 @@ h1,h2,h3,h4{
 document.getElementById('yr').textContent = new Date().getFullYear();
 
 const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-/* ---- résumé button hint (file added later) ---- */
-document.getElementById('resumeBtn').addEventListener('click', function(e){
-  // point this at your CV file once uploaded, e.g. href="images/zainul-resume.pdf"
-  if(this.getAttribute('href') === '#'){
-    e.preventDefault();
-    alert('Add your résumé PDF to the site folder and set this button\'s link to it (e.g. zainul-resume.pdf).');
-  }
-});
 
 document.getElementById('bookBtn').addEventListener('click', function(e){
   // replace the href with your Google Calendar appointment/booking link
