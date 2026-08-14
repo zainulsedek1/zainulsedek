@@ -65,9 +65,16 @@
   --fs-body:    clamp(1rem, 1.15vw, 1.1rem);
   --fs-sm:      .82rem;
 
-  /* spacing scale */
+  /* Spacing scale. The big steps are fluid like the type scale, or a phone
+     inherits desktop gaps: --s-8 as a flat 9rem meant 288px of dead space
+     between every section on a 375px screen. Each clamp reaches its old
+     desktop value around 1440px. */
   --s-1: .5rem; --s-2: 1rem; --s-3: 1.5rem; --s-4: 2rem;
-  --s-5: 3rem;  --s-6: 4rem; --s-7: 6rem;  --s-8: 9rem; --s-9: 13rem;
+  --s-5: clamp(2rem,    3.3vw,  3rem);
+  --s-6: clamp(2.25rem, 4.4vw,  4rem);
+  --s-7: clamp(3rem,    6.7vw,  6rem);
+  --s-8: clamp(3rem,    10vw,   9rem);
+  --s-9: clamp(4rem,    14.4vw, 13rem);
 
   --maxw: 1320px;
   --pad: clamp(1.25rem, 5vw, 5rem);
