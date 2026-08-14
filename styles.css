@@ -134,3 +134,22 @@ h1,h2,h3{font-family:var(--f-display);font-weight:400;line-height:1;letter-spaci
 .wcard__desc{color:var(--ink-soft);font-size:.95rem;margin-top:.55rem;flex:1}
 .wcard__cta{display:inline-flex;align-items:center;gap:.4rem;margin-top:.9rem;font-size:.85rem;font-weight:600;color:var(--coral-deep);transition:gap .3s}
 .wcard:hover .wcard__cta{gap:.8rem}
+
+/* ============================================================
+   PAGE TRANSITIONS
+   Cross-document view transitions; unsupported browsers simply
+   navigate as before, so this is purely additive.
+   ============================================================ */
+@view-transition{navigation:auto}
+::view-transition-old(root),
+::view-transition-new(root){animation-duration:.42s;animation-timing-function:var(--ease)}
+
+/* receives the morph from the homepage's hovered preview */
+.hero__img img{view-transition-name:case-hero}
+::view-transition-group(case-hero){animation-duration:.55s;animation-timing-function:var(--ease)}
+
+@media(prefers-reduced-motion:reduce){
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*){animation:none!important}
+}
