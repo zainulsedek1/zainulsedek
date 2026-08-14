@@ -451,6 +451,26 @@ h1,h2,h3,h4{
 .anim .r.in{opacity:1;transform:none}
 .r-2{transition-delay:.08s}.r-3{transition-delay:.16s}.r-4{transition-delay:.24s}
 
+/* ============================================================
+   MOBILE TIGHTENING
+   The stat and service cards carry fixed min-heights so desktop
+   rows line up, and .service__desc uses margin-top:auto to pin the
+   description to the bottom of that box. Stacked one-per-row on a
+   phone there is no row to align to, so those rules just inflate
+   each card and strand its text ~66px below its own heading.
+   ============================================================ */
+@media(max-width:760px){
+  .stat{min-height:0;padding:1.4rem}
+  .service{min-height:0;padding:1.5rem 1.4rem}
+  .service__desc{margin-top:.55rem;padding-top:0}
+  .section__head{margin-bottom:var(--s-5)}
+  .services__cta{margin-top:var(--s-4)}
+  .viewall{margin-top:var(--s-3)}
+  /* the last paragraph's margin stacks on top of the section padding */
+  .about p:last-of-type{margin-bottom:0}
+  .contact{padding-block:var(--s-8) var(--s-6)}
+}
+
 @media(prefers-reduced-motion:reduce){
   *{animation:none!important;transition-duration:.01ms!important}
   .anim .r{opacity:1;transform:none}
