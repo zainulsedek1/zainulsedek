@@ -711,7 +711,10 @@ const saveData = (navigator.connection && navigator.connection.saveData) === tru
         const name = typeof item === 'string' ? item : item.v;
         if(typeof item === 'object' && playVideo){
           const v = document.createElement('video');
-          v.src = 'images/' + name + '.mp4';
+          /* -loop.mp4 is a 12s 320x568 cut of the full case-study clip: this is
+             ambient texture ~250px wide behind a scrim, not something anyone
+             watches. The full-quality originals stay for akisyah.html. */
+          v.src = 'images/' + name + '-loop.mp4';
           v.poster = 'images/' + name + '-poster.jpg';
           v.muted = v.loop = v.playsInline = v.autoplay = true;
           v.setAttribute('playsinline','');
