@@ -140,8 +140,8 @@ function prayers(dstr) {
   const mid = t => fix(12 - sun(jd0 + t).eqt, 24);
   const at = (ang, t, ccw) => { const dc = sun(jd0 + t).decl; const T = acos((-sin(ang) - sin(dc) * sin(lat)) / (cos(dc) * cos(lat))) / 15; return mid(t) + (ccw ? -T : T); };
   const asr = (f, t) => { const dc = sun(jd0 + t).decl; return at(-acot(f + tan(Math.abs(lat - dc))), t); };
-  const raw = { subuh: at(20, 5 / 24, true), syuruk: at(0.833, 6 / 24, true), zohor: mid(0.5), asar: asr(1, 13 / 24), maghrib: at(0.833, 18 / 24), isyak: at(18, 18 / 24) };
-  const ihtiyat = { subuh: 2, syuruk: -2, zohor: 2, asar: 2, maghrib: 2, isyak: 2 };
+  const raw = { subuh: at(18, 5 / 24, true), syuruk: at(0.833, 6 / 24, true), zohor: mid(0.5), asar: asr(1, 13 / 24), maghrib: at(0.833, 18 / 24), isyak: at(18, 18 / 24) };
+  const ihtiyat = { subuh: 1, syuruk: -2, zohor: 2, asar: 1, maghrib: 0, isyak: 0 };
   const out = {};
   for (const k in raw) { const mins = Math.ceil((raw[k] + tz - lng / 15) * 60 + ihtiyat[k]); out[k] = `${pad(Math.floor(mins / 60))}:${pad(mins % 60)}`; }
   return (prayerCache[dstr] = out);
@@ -171,6 +171,14 @@ function streak() {
 }
 
 /* ================= timeline ================= */
+const hm = m => `${pad(Math.floor(m / 60))}:${pad(m % 60)}`;
+function gymTimes(d) {
+  // Leave after Subuh (min 06:05); Subuh drifts from ~05:48 (Nov) to ~06:15 (Jan).
+  const leave = Math.max(toMin('06:05'), Math.ceil((toMin(prayers(d).subuh) + 15) / 5) * 5);
+  const train = leave + 10;
+  return { leave: hm(leave), train: hm(train), breakfast: hm(Math.min(train + 65, toMin('07:45'))) };
+}
+const ampm = t => { const [h, m] = t.split(':').map(Number); return `${h % 12 || 12}:${pad(m)} ${h < 12 ? 'AM' : 'PM'}`; };
 function timeline(d) {
   const P = prayers(d), W = WORKOUTS[sessionId(d)], wkend = dow(d) >= 6, items = [];
   const add = (t, n, s, k) => items.push({ t, n, s, k });
@@ -178,9 +186,10 @@ function timeline(d) {
   add(P.subuh, 'Subuh', '', 'prayer');
   if (!wkend) {
     add('05:40', 'Weigh in', 'After the toilet, before food.', 'me');
-    if (isTrain(W)) { add('06:05', 'Head to the gym', 'Anytime Fitness · Plaza Shah Alam', 'gym'); add('06:15', `Train · ${W.short}`, `~${W.mins} min`, 'gym'); }
-    else add('06:15', 'Morning walk', '15–20 min outside. Daylight resets your body clock.', 'gym');
-    add('07:20', 'Breakfast', 'Protein first.', 'meal');
+    const g = gymTimes(d);
+    if (isTrain(W)) { add(g.leave, 'Head to the gym', 'Anytime Fitness · Plaza Shah Alam', 'gym'); add(g.train, `Train · ${W.short}`, `~${W.mins} min`, 'gym'); }
+    else add(g.train, 'Morning walk', '15–20 min outside. Daylight resets your body clock.', 'gym');
+    add(g.breakfast, 'Breakfast', 'Protein first.', 'meal');
     add('08:10', 'Leave for work', '~40 min to Ara Damansara', 'work');
     add('09:00', 'Work', 'Stand up every hour. Refill your bottle.', 'work');
     add('12:30', 'Lunchbox', 'Mum\'s lauk · 1 cup rice · half sayur', 'meal');
@@ -291,7 +300,7 @@ function vToday() {
     const exN = W.blocks.filter(b => b.k === 'ex').length;
     const done = workoutDone(d);
     sess = `<div class="card volt session"><div class="stripe"></div>
-      <p class="eyebrow">TODAY · 6:15 AM${ph ? ` · ${ph.name}` : ''}</p>
+      <p class="eyebrow">TODAY · ${ampm(gymTimes(d).train)}${ph ? ` · ${ph.name}` : ''}</p>
       <p class="d l">${esc(W.name)}</p>
       <div class="meta"><span>~${W.mins} MIN</span>${exN ? `<span>${exN} EXERCISES</span>` : ''}${W.cardioMins ? `<span>${W.cardioMins} MIN CARDIO</span>` : ''}</div>
       ${done ? `<button class="btn ink" data-a="go" data-h="session/${d}">${ic('check', 3)} DONE · VIEW</button>`
