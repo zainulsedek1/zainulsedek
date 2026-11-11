@@ -286,3 +286,9 @@ details.how li { margin-bottom: 8px; }
 .check .lbl, .check .sub { display: block; }
 .grid2 > *, .grid3 > * { min-width: 0; }
 input[type=time].input { font-size: 20px; padding: 0 12px; min-width: 0; -webkit-appearance: none; appearance: none; }
+
+/* exercise animation */
+.anim { position: relative; background: radial-gradient(120% 90% at 50% 100%, #1C1F12 0%, var(--s1) 60%); border-radius: var(--r); padding: 10px 10px 14px; margin: 14px 0 6px; overflow: hidden; }
+.anim svg { width: 100%; aspect-ratio: 3 / 2; display: block; }
+.anim-tag { position: absolute; top: 12px; left: 14px; font-size: 10px; font-weight: 800; letter-spacing: .14em; color: var(--dim); }
+.anim-say { text-align: center; font-weight: 900; font-stretch: 72%; text-transform: uppercase; font-size: 18px; line-height: 1.05; color: var(--volt); min-height: 19px; margin-top: 4px; }

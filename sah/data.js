@@ -2,7 +2,8 @@
 'use strict';
 
 const PLAN = {
-  start: '2026-11-09',     // Monday, week 1
+  start: '2026-11-11',     // Day 1 (restarted after being sick)
+  week1: '2026-11-09',     // Monday of week 1 — weeks run Mon–Sun
   fitting: '2026-12-15',
   wedding: '2027-01-23',   // Nikah
   loc: { name: 'Shah Alam', lat: 3.0733, lng: 101.5185, tz: 8 },
@@ -10,9 +11,10 @@ const PLAN = {
 
 /* ---------- Phases ---------- */
 const PHASES = [
-  { id: 'learn', name: 'LEARN', weeks: [1, 2], from: '2026-11-09', to: '2026-11-22', rir: 3,
+  { id: 'learn', name: 'LEARN', weeks: [1, 2], from: '2026-11-11', to: '2026-11-22', rir: 3,
     line: 'Form first. Ego later.',
-    focus: ['3 full-body days + 2 cardio days (beginner guideline: 2–3 lifting days/week)',
+    focus: ['Back from being sick: first 7 days stay light — stop 4 reps before failure. Fever or chest symptoms = rest, not gym.',
+            '3 full-body days + 2 cardio days (beginner guideline: 2–3 lifting days/week)',
             'Learn every lift with smooth, controlled reps — stop 3 reps before failure',
             'Lock in the 5:30 wake-up. Every day. Weekends too.',
             'Calorie cut starts. Hit protein every single day.'] },
@@ -310,7 +312,7 @@ const SWAPS = [
 
 const MAK_TIPS = [
   'Bakar, panggang, sup, singgang, asam pedas, masak kicap — more of these please.',
-  'Less santan and deep-frying for the next 10 weeks (sikit-sikit is fine).',
+  'Less santan and deep-frying until the nikah (sikit-sikit is fine).',
   'Extra protein in every lauk — 2 pieces of ayam/ikan for me.',
   'Double the sayur. Stir-fried with less oil is perfect.',
   'Sambal on the side so I can control it.',

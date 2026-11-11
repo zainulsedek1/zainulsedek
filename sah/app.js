@@ -54,18 +54,24 @@ const blank = () => ({ v: 1, profile: null, days: {}, weights: [], waists: [], l
 let S;
 try { S = Object.assign(blank(), JSON.parse(localStorage.getItem(KEY)) || {}); } catch (e) { S = blank(); }
 const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) { toast('Storage full or blocked'); } };
+if (S.planStart !== PLAN.start) { // plan restarted: fresh streak/session count from the new Day 1
+  S.planStart = PLAN.start; S.active = null;
+  if (S.profile && S.profile.d0 < PLAN.start) S.profile.d0 = PLAN.start;
+  try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) { }
+}
 const day = d => (S.days[d] ||= { checks: {}, protein: 0, water: 0, pl: [], wind: [] });
 const peek = d => S.days[d] || { checks: {}, protein: 0, water: 0, pl: [], wind: [] };
 
 /* ================= program ================= */
-const weekOf = d => Math.floor(diff(PLAN.start, d) / 7) + 1;
+const weekOf = d => Math.floor(diff(PLAN.week1, d) / 7) + 1;
 const phaseOf = d => PHASES.find(p => d >= p.from && d <= p.to) || null;
 function sessionId(d) {
   if (d < PLAN.start) return 'PRE';
   if (d === PLAN.wedding) return 'SAH';
   if (d > PLAN.wedding) return 'DONE';
   const w = weekOf(d), x = dow(d);
-  if (w <= 2) { const a = w === 1; return [null, a ? 'FB_A' : 'FB_B', 'ZONE2', a ? 'FB_B' : 'FB_A', 'ZONE2', a ? 'FB_A' : 'FB_B', 'ACTIVE', 'CHECKIN'][x]; }
+  if (w === 1) return [null, 'PRE', 'PRE', 'FB_A', 'ZONE2', 'FB_B', 'ACTIVE', 'CHECKIN'][x]; // starts Wed 11 Nov
+  if (w === 2) return [null, 'FB_A', 'ZONE2', 'FB_B', 'ZONE2', 'FB_A', 'ACTIVE', 'CHECKIN'][x];
   if (w <= 10) return [null, 'UPPER_A', 'LOWER_A', 'ENGINE', 'UPPER_B', 'LOWER_B', 'ACTIVE', 'CHECKIN'][x];
   return [null, 'READY_A', 'READY_B', 'WALK', 'REST', 'REST', 'SAH', 'REST'][x];
 }
@@ -250,7 +256,7 @@ function vOnboard() {
   return `<div class="onb fade">
     <div class="top"><div class="brand">SAH<b>.</b></div><span class="eyebrow">NIKAH · 23 JAN 2027</span></div>
     <div class="hero-o"><p class="d xxl num">${left}</p><p class="d l">DAYS TO SAH.</p>
-    <p class="mute" style="margin-top:14px;max-width:34ch">11 weeks. One plan. Science-backed training, Mak's cooking, 7 hours of sleep. Let's set your numbers.</p></div>
+    <p class="mute" style="margin-top:14px;max-width:34ch">${Math.ceil(left / 7)} weeks. One plan. Science-backed training, Mak's cooking, 7 hours of sleep. Let's set your numbers.</p></div>
     <div class="stack" style="margin-top:28px">
       <div class="field"><span>Sex (for the calorie formula)</span><div class="seg">
         <button data-a="onbsex" data-v="m" class="${p.sex === 'm' ? 'on' : ''}">Male</button><button data-a="onbsex" data-v="f" class="${p.sex === 'f' ? 'on' : ''}">Female</button></div></div>
@@ -354,7 +360,7 @@ function vSession(d) {
   const W = build(d), done = peek(d).workout;
   const blocks = W.blocks.map((b, i) => b.k === 'cardio'
     ? `<div class="row between"><div class="grow"><p class="d xs">${esc(b.label)}</p><p class="tiny mute" style="margin-top:4px">${esc(b.note)}</p></div><span class="chip">${Math.round(b.segs.reduce((a, s) => a + s.secs, 0) / 60)} MIN</span></div>`
-    : `<div class="row between"><div class="grow"><p class="d xs">${esc(EX[b.id].name)}${b.main ? ' <span class="volt" style="font-size:12px;letter-spacing:.1em">MAIN</span>' : ''}</p><p class="tiny mute" style="margin-top:4px">${esc(EX[b.id].target)}</p></div><span class="chip num">${b.sets} × ${esc(b.reps)}</span></div>`).join('');
+    : `<a class="row between" href="#ex/${b.id}" style="text-decoration:none;color:inherit"><div class="grow"><p class="d xs">${esc(EX[b.id].name)}${b.main ? ' <span class="volt" style="font-size:12px;letter-spacing:.1em">MAIN</span>' : ''}</p><p class="tiny mute" style="margin-top:4px">${esc(EX[b.id].target)}</p></div><span class="row" style="gap:6px"><span class="chip num">${b.sets} × ${esc(b.reps)}</span><span class="chip volt">HOW ▸</span></span></a>`).join('');
   const doneH = done ? `<div class="card volt" style="margin-top:14px"><p class="eyebrow">COMPLETED</p><p class="d m">${done.sets} SETS · ${done.mins} MIN</p>${done.vol ? `<p class="small">${done.vol.toLocaleString()} kg moved</p>` : ''}</div>` : '';
   return `<div class="fade"><div class="top"><button class="iconbtn" data-a="back">${ic('back')}</button><span class="eyebrow">${fmtDay(d)}</span></div>
     <p class="eyebrow">${W.phase ? `WEEK ${Math.max(1, weekOf(d))} · ${W.phase.name}` : ''}</p>
@@ -365,6 +371,18 @@ function vSession(d) {
     ${S.active && S.active.d === d ? `<a class="btn" href="#workout" style="margin-top:20px">${ic('play')} RESUME WORKOUT</a>` : `<button class="btn" data-a="start" data-d="${d}" style="margin-top:20px">${ic('play')} ${done ? 'DO IT AGAIN' : 'START WORKOUT'}</button>`}
     <p class="tiny dim" style="margin-top:10px;text-align:center">"Stop X reps before failure" = you could have done X more with good form.</p>`
       : `<div class="card"><p>${esc(W.note)}</p></div>`}</div>`;
+}
+
+/* ---------- Exercise guide ---------- */
+function vEx(id) {
+  const E = EX[id]; if (!E) { location.hash = '#today'; return ''; }
+  return `<div class="fade"><div class="top"><button class="iconbtn" data-a="back">${ic('back')}</button><span class="eyebrow">EXERCISE GUIDE</span></div>
+    <p class="d l">${esc(E.name)}</p><p class="mute small" style="margin-top:6px">${esc(E.target)}</p>
+    <div class="anim" data-anim="${id}"></div>
+    <div class="card" style="margin-top:12px"><p class="d xs" style="margin-bottom:6px">HOW TO DO IT</p><ol style="margin:0;padding-left:20px">${E.cues.map(c => `<li style="margin-bottom:8px">${esc(c)}</li>`).join('')}</ol>
+      ${E.swap ? `<p class="small mute">${esc(E.swap)}</p>` : ''}</div>
+    <div class="hint" style="margin-top:12px"><b>Tempo:</b> the lowering part is slow (2–3 sec), the lifting part is strong. The figure shows the speed.</div>
+    <a class="btn line sm" style="margin-top:14px" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=${encodeURIComponent(E.name + ' proper form')}">${ic('play')} WATCH A REAL DEMO</a></div>`;
 }
 
 /* ---------- Workout player ---------- */
@@ -432,7 +450,9 @@ function vWorkout() {
     body = `<p class="eyebrow">EXERCISE ${W.blocks.slice(0, i + 1).filter(x => x.k === 'ex').length} / ${W.blocks.filter(x => x.k === 'ex').length}${b.main ? ' · MAIN LIFT' : ''}</p>
       <p class="d l ex-name">${esc(E.name)}</p>
       <p class="mute small">${esc(E.target)}</p>
+      <div class="anim" data-anim="${b.id}"></div>
       <div class="target"><span class="chip volt">${b.sets} SETS</span><span class="chip">${esc(b.reps)} ${E.time ? 'SEC' : 'REPS'}</span><span class="chip">${W.rir} IN RESERVE</span><span class="chip">REST ${mmss(E.rest)}</span></div>
+      ${diff(PLAN.start, A.d) < 7 ? `<div class="hint" style="margin-bottom:8px;border-color:var(--blue)"><b>Easing back in after being sick:</b> go lighter this week — stop 4 reps before failure. Feel rough? Stop and rest.</div>` : ''}
       <div class="hint">${suggestion(b)}</div>
       <div class="sets"><div class="set-h"><span>SET</span><span>KG</span><span>${E.time ? 'SEC' : 'REPS'}</span><span></span></div>${rows}</div>
       <details class="how"><summary>HOW TO DO IT</summary><ol>${E.cues.map(c => `<li>${esc(c)}</li>`).join('')}</ol>
@@ -524,10 +544,10 @@ function vPlan() {
   const phases = PHASES.map(p => {
     const weeks = [];
     for (let w = p.weeks[0]; w <= p.weeks[1]; w++) {
-      const ws = addDays(PLAN.start, (w - 1) * 7);
+      const ws = addDays(PLAN.week1, (w - 1) * 7);
       const days = [];
       for (let k = 0; k < 7; k++) {
-        const d = addDays(ws, k); if (d > PLAN.wedding) break;
+        const d = addDays(ws, k); if (d > PLAN.wedding) break; if (d < PLAN.start) continue;
         const W = WORKOUTS[sessionId(d)], done = workoutDone(d);
         days.push(`<a class="dayrow ${d === t ? 'today' : ''} ${done ? 'done' : ''}" href="#session/${d}"><span class="tiny" style="font-weight:800;letter-spacing:.06em">${fmtDay(d).replace(/ \w+$/, '')}</span><b>${esc(W.short)}</b><span class="ok">${done ? ic('check', 3).replace('<svg', '<svg width="18" height="18"') : isTrain(W) ? '›' : ''}</span></a>`);
       }
@@ -537,7 +557,7 @@ function vPlan() {
       <div class="phase-b"><p class="d xs volt" style="font-stretch:75%">${esc(p.line)}</p><ul class="bullets small" style="margin:8px 0 14px">${p.focus.map(f => `<li>${esc(f)}</li>`).join('')}</ul>${weeks.join('')}</div></div>`;
   }).join('<div style="height:12px"></div>');
   const sci = SCIENCE.map(s => `<div class="sci"><p class="v">${esc(s.v)}</p><p class="small" style="margin-top:4px">${esc(s.f)}</p><p class="p">${esc(s.p)}</p><a class="tiny" href="${s.u}" target="_blank" rel="noopener" style="display:inline-block;margin-top:8px;color:var(--mute)">${esc(s.s)} ↗</a></div>`).join('');
-  return `<div class="fade">${hdr('11 WEEKS')}
+  return `<div class="fade">${hdr(`${Math.max(0, diff(today(), PLAN.wedding))} DAYS LEFT`)}
     <p class="d xl">THE PLAN<span class="volt">.</span></p>
     <div class="card" style="margin-top:18px">${msH}</div>
     <div class="sec"><div class="sec-h"><p class="d s">PHASES</p><span class="eyebrow">TAP A WEEK</span></div>${phases}</div>
@@ -702,12 +722,13 @@ function render() {
   const [r, arg] = location.hash.replace(/^#/, '').split('/');
   const m = main();
   if (!S.profile) { m.className = 'full'; m.innerHTML = vOnboard(); $('#tabs').innerHTML = ''; return; }
-  const views = { today: vToday, plan: vPlan, fuel: vFuel, sleep: vSleep, you: vYou, session: () => vSession(arg), workout: vWorkout, done: () => vDone(arg), welcome: vWelcome };
+  const views = { today: vToday, plan: vPlan, fuel: vFuel, sleep: vSleep, you: vYou, session: () => vSession(arg), ex: () => vEx(arg), workout: vWorkout, done: () => vDone(arg), welcome: vWelcome };
   const key = views[r] ? r : 'today';
-  const full = ['workout', 'session', 'done', 'welcome'].includes(key);
+  const full = ['workout', 'session', 'ex', 'done', 'welcome'].includes(key);
   m.className = full ? 'full' : '';
   m.innerHTML = views[key]();
   $('#tabs').innerHTML = full ? '' : tabbar(key);
+  if (typeof Anim !== 'undefined') Anim.mount(m);
   if (key === 'workout' && S.active) { keepAwake(true); tickH = setInterval(tick, 250); }
   renderOverlay();
   if (RT && !tickH) tickH = setInterval(tick, 250);
