@@ -203,19 +203,19 @@ const WORKOUTS = {
       segments: [{ label: 'STEADY', secs: 30 * 60, hard: false }] },
     items: [['plank', 'A', '20–40s'], ['side_plank', 'A', '15–30s'], ['dead_bug', 'A', '6–10']] },
 
-  UPPER_A: { name: 'UPPER A', short: 'Upper A', type: 'lift', mins: 55, items: [
+  UPPER_A: { name: 'UPPER A', short: 'Upper A', type: 'lift', mins: 62, items: [
     ['db_bench', 'M', '6–10'], ['lat_pulldown', 'M', '8–12'], ['db_ohp', 'A', '8–12'],
-    ['cable_row', 'A', '10–12'], ['lat_raise', 'A', '12–15'], ['tri_pushdown', 'A', '10–15']] },
+    ['cable_row', 'A', '10–12'], ['lat_raise', 'A', '12–15'], ['tri_pushdown', 'A', '10–15'], ['db_curl', 'A', '10–12']] },
   LOWER_A: { name: 'LOWER A', short: 'Lower A', type: 'lift', mins: 55, items: [
     ['smith_squat', 'M', '6–10'], ['db_rdl', 'M', '8–10'], ['leg_press', 'A', '10–15'],
     ['leg_curl', 'A', '10–15'], ['calf_raise', 'A', '10–15'], ['plank', 'A', '30–45s']] },
   ENGINE: { name: 'ENGINE', short: 'Engine', type: 'cardio', mins: 50,
     cardio: { label: 'Bike Intervals', note: 'Bike, not running — cycling interferes less with muscle gain. HARD = 8/10 effort. EASY = slow spin.',
       segments: null /* built from phase */ },
-    items: [['cable_crunch', 'A', '10–15'], ['knee_raise', 'A', '10–15'], ['face_pull', 'A', '12–15'], ['db_curl', 'A', '10–12']] },
-  UPPER_B: { name: 'UPPER B', short: 'Upper B', type: 'lift', mins: 55, items: [
+    items: [['cable_crunch', 'A', '10–15'], ['knee_raise', 'A', '10–15'], ['face_pull', 'A', '12–15'], ['db_curl', 'A', '10–12'], ['tri_pushdown', 'A', '10–15']] },
+  UPPER_B: { name: 'UPPER B', short: 'Upper B', type: 'lift', mins: 65, items: [
     ['machine_row', 'M', '8–12'], ['incline_db', 'M', '8–12'], ['assisted_pullup', 'A', '6–10'],
-    ['chest_press', 'A', '10–12'], ['rear_delt', 'A', '12–15'], ['hammer_curl', 'A', '10–12']] },
+    ['chest_press', 'A', '10–12'], ['rear_delt', 'A', '12–15'], ['lat_raise', 'A', '12–15'], ['hammer_curl', 'A', '10–12'], ['tri_pushdown', 'A', '10–15']] },
   LOWER_B: { name: 'LOWER B', short: 'Lower B', type: 'lift', mins: 55, items: [
     ['hip_thrust', 'M', '8–12'], ['leg_press', 'M', '12–15'], ['walking_lunge', 'A', '10–12'],
     ['leg_ext', 'A', '12–15'], ['back_ext', 'A', '10–15'], ['calf_raise', 'A', '12–15']] },
